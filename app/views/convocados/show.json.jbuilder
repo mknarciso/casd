@@ -1,0 +1,1 @@
+json.partial! "convocados/convocado", convocado: @convocado

@@ -1,0 +1,6 @@
+<h2>Importar lista de candidatos convocados</h2>
+
+<%= form_tag import_convocados_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Importar" %>
+<% end %>

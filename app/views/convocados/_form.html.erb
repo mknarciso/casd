@@ -1,0 +1,129 @@
+<%= form_for(@convocado) do |f| %>
+  <% if @convocado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@convocado.errors.count, "error") %> prohibited this convocado from being saved:</h2>
+
+      <ul>
+      <% @convocado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :inscricao %><br>
+    <%= f.number_field :inscricao %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br>
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :nascimento %><br>
+    <%= f.date_select :nascimento %>
+  </div>
+  <div class="field">
+    <%= f.label :responsavel %><br>
+    <%= f.text_field :responsavel %>
+  </div>
+  <div class="field">
+    <%= f.label :parentesco %><br>
+    <%= f.text_field :parentesco %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br>
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br>
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br>
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade %><br>
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :especiais %><br>
+    <%= f.check_box :especiais %>
+  </div>
+  <div class="field">
+    <%= f.label :nec_especial %><br>
+    <%= f.text_field :nec_especial %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_escola %><br>
+    <%= f.text_field :tipo_escola %>
+  </div>
+  <div class="field">
+    <%= f.label :escolaridade %><br>
+    <%= f.text_field :escolaridade %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_escola %><br>
+    <%= f.text_field :nome_escola %>
+  </div>
+  <div class="field">
+    <%= f.label :trabalha %><br>
+    <%= f.check_box :trabalha %>
+  </div>
+  <div class="field">
+    <%= f.label :profissao %><br>
+    <%= f.text_field :profissao %>
+  </div>
+  <div class="field">
+    <%= f.label :transporte %><br>
+    <%= f.text_field :transporte %>
+  </div>
+  <div class="field">
+    <%= f.label :internet %><br>
+    <%= f.check_box :internet %>
+  </div>
+  <div class="field">
+    <%= f.label :ex_aluno %><br>
+    <%= f.text_field :ex_aluno %>
+  </div>
+  <div class="field">
+    <%= f.label :como_conheceu %><br>
+    <%= f.text_field :como_conheceu %>
+  </div>
+  <div class="field">
+    <%= f.label :data_inscricao %><br>
+    <%= f.date_select :data_inscricao %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
