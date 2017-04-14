@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Bootstrap
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
