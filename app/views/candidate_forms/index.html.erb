@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Candidate Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Automovel</th>
+      <th>Television</th>
+      <th>Computers</th>
+      <th>Washingmachines</th>
+      <th>Fridge</th>
+      <th>Radio</th>
+      <th>Bathrooms</th>
+      <th>Employees</th>
+      <th>Householderinstructionlevel</th>
+      <th>City</th>
+      <th>Housetype</th>
+      <th>Transport</th>
+      <th>Familyincomeparticipation</th>
+      <th>Worktype</th>
+      <th>Individualmonthlyincome</th>
+      <th>Howdoyouknowcasd</th>
+      <th>Ishighschoolstudent</th>
+      <th>Hasstudiedcasd</th>
+      <th>Relativeincasd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidate_forms.each do |candidate_form| %>
+      <tr>
+        <td><%= candidate_form.automovel %></td>
+        <td><%= candidate_form.television %></td>
+        <td><%= candidate_form.computers %></td>
+        <td><%= candidate_form.washingMachines %></td>
+        <td><%= candidate_form.fridge %></td>
+        <td><%= candidate_form.radio %></td>
+        <td><%= candidate_form.bathrooms %></td>
+        <td><%= candidate_form.employees %></td>
+        <td><%= candidate_form.householderInstructionLevel %></td>
+        <td><%= candidate_form.city %></td>
+        <td><%= candidate_form.houseType %></td>
+        <td><%= candidate_form.transport %></td>
+        <td><%= candidate_form.familyIncomeParticipation %></td>
+        <td><%= candidate_form.workType %></td>
+        <td><%= candidate_form.individualMonthlyIncome %></td>
+        <td><%= candidate_form.howDoYouKnowCASD %></td>
+        <td><%= candidate_form.isHighSchoolStudent %></td>
+        <td><%= candidate_form.hasStudiedCASD %></td>
+        <td><%= candidate_form.relativeInCASD %></td>
+        <td><%= link_to 'Show', candidate_form %></td>
+        <td><%= link_to 'Edit', edit_candidate_form_path(candidate_form) %></td>
+        <td><%= link_to 'Destroy', candidate_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Candidate form', new_candidate_form_path %>

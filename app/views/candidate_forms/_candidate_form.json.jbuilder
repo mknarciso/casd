@@ -1,0 +1,2 @@
+json.extract! candidate_form, :id, :automovel, :television, :computers, :washingMachines, :fridge, :radio, :bathrooms, :employees, :householderInstructionLevel, :city, :houseType, :transport, :familyIncomeParticipation, :workType, :individualMonthlyIncome, :howDoYouKnowCASD, :isHighSchoolStudent, :hasStudiedCASD, :relativeInCASD, :created_at, :updated_at
+json.url candidate_form_url(candidate_form, format: :json)

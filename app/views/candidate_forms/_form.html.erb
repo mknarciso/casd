@@ -1,0 +1,93 @@
+<%= form_for(@candidate_form) do |f| %>
+  <% if @candidate_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidate_form.errors.count, "error") %> prohibited this candidate_form from being saved:</h2>
+
+      <ul>
+      <% @candidate_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :automovel %><br>
+    <%= f.number_field :automovel %>
+  </div>
+  <div class="field">
+    <%= f.label :television %><br>
+    <%= f.number_field :television %>
+  </div>
+  <div class="field">
+    <%= f.label :computers %><br>
+    <%= f.number_field :computers %>
+  </div>
+  <div class="field">
+    <%= f.label :washingMachines %><br>
+    <%= f.number_field :washingMachines %>
+  </div>
+  <div class="field">
+    <%= f.label :fridge %><br>
+    <%= f.number_field :fridge %>
+  </div>
+  <div class="field">
+    <%= f.label :radio %><br>
+    <%= f.number_field :radio %>
+  </div>
+  <div class="field">
+    <%= f.label :bathrooms %><br>
+    <%= f.number_field :bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :employees %><br>
+    <%= f.number_field :employees %>
+  </div>
+  <div class="field">
+    <%= f.label :householderInstructionLevel %><br>
+    <%= f.text_field :householderInstructionLevel %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :houseType %><br>
+    <%= f.text_field :houseType %>
+  </div>
+  <div class="field">
+    <%= f.label :transport %><br>
+    <%= f.text_field :transport %>
+  </div>
+  <div class="field">
+    <%= f.label :familyIncomeParticipation %><br>
+    <%= f.text_field :familyIncomeParticipation %>
+  </div>
+  <div class="field">
+    <%= f.label :workType %><br>
+    <%= f.text_field :workType %>
+  </div>
+  <div class="field">
+    <%= f.label :individualMonthlyIncome %><br>
+    <%= f.text_field :individualMonthlyIncome %>
+  </div>
+  <div class="field">
+    <%= f.label :howDoYouKnowCASD %><br>
+    <%= f.text_field :howDoYouKnowCASD %>
+  </div>
+  <div class="field">
+    <%= f.label :isHighSchoolStudent %><br>
+    <%= f.text_field :isHighSchoolStudent %>
+  </div>
+  <div class="field">
+    <%= f.label :hasStudiedCASD %><br>
+    <%= f.check_box :hasStudiedCASD %>
+  </div>
+  <div class="field">
+    <%= f.label :relativeInCASD %><br>
+    <%= f.check_box :relativeInCASD %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
