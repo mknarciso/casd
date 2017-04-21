@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Necessary to run on Windows
 gem 'tzinfo-data'
 
+#Bootstrap
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
