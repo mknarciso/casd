@@ -1,23 +1,24 @@
+<h1>Formulários</h1>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Candidate Forms</h1>
+<h1>Lista de Candidatos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Automovel</th>
-      <th>Television</th>
-      <th>Computers</th>
-      <th>Washingmachines</th>
-      <th>Fridge</th>
-      <th>Radio</th>
-      <th>Bathrooms</th>
-      <th>Employees</th>
-      <th>Householderinstructionlevel</th>
-      <th>City</th>
-      <th>Housetype</th>
-      <th>Transport</th>
-      <th>Familyincomeparticipation</th>
+      <th>Automóveis</th>
+      <th>Televisão</th>
+      <th>Computadores</th>
+      <th>Máquina de Lavar</th>
+      <th>Geladeiras</th>
+      <th>Aparelho de rádio</th>
+      <th>Banheiros</th>
+      <th>Empregados</th>
+      <th>Nível Instrução do Chefe de Família</th>
+      <th>Cidade</th>
+      <th>Habitação</th>
+      <th>Transporte</th>
+      <th>Participação na renda familiar</th>
       <th>Worktype</th>
       <th>Individualmonthlyincome</th>
       <th>Howdoyouknowcasd</th>
@@ -60,4 +61,12 @@
 
 <br>
 
-<%= link_to 'New Candidate form', new_candidate_form_path %>
+
+<%= link_to 'Novo Formulário', new_candidate_form_path %>
+<!--<% @candidate_forms.each do |candidate_form| %>
+<!--Automovel: <%= candidate_form.automovel %><br/><br/>
+<!--Quantas televisões há na sua casa? <%= candidate_form.television %><br/><br/>
+Quantos computadores há na sua casa? <%= candidate_form.computers %><br/><br/>
+Quantas máquinas de lavar há na sua casa? <%= candidate_form.washingMachines %><br/><br/> -->
+
+<% end %>
