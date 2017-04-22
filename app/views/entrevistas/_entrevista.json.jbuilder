@@ -1,0 +1,2 @@
+json.extract! entrevista, :id, :entregou_documentos, :historico_escolar, :numero_de_pessoas, :iptu, :veiculos, :holerites_mes1, :holerites_mes2, :holerites_mes3, :aposentadorias, :auxilios, :renda_bruta, :rbpc, :agua_mes1, :agua_mes2, :agua_mes3, :luz_mes1, :luz_mes2, :luz_mes3, :net_TV_mes1, :net_TV_mes2, :net_TV_mes3, :aluguel, :outros_gastos, :gastos_totais, :renda_liq, :rlpc, :obs, :aprovado, :created_at, :updated_at
+json.url entrevista_url(entrevista, format: :json)

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entrevistas
+  resources :entrevistas
   resources :candidate_forms
   resources :candidatos
   # The priority is based upon order of creation: first created -> highest priority.

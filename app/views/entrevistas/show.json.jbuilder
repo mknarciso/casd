@@ -1,0 +1,1 @@
+json.partial! "entrevistas/entrevista", entrevista: @entrevista
