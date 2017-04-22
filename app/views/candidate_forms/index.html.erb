@@ -1,0 +1,72 @@
+<h1>Formulários</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Candidatos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Automóveis</th>
+      <th>Televisão</th>
+      <th>Computadores</th>
+      <th>Máquina de Lavar</th>
+      <th>Geladeiras</th>
+      <th>Aparelho de rádio</th>
+      <th>Banheiros</th>
+      <th>Empregados</th>
+      <th>Nível Instrução do Chefe de Família</th>
+      <th>Cidade</th>
+      <th>Habitação</th>
+      <th>Transporte</th>
+      <th>Participação na renda familiar</th>
+      <th>Worktype</th>
+      <th>Individualmonthlyincome</th>
+      <th>Howdoyouknowcasd</th>
+      <th>Ishighschoolstudent</th>
+      <th>Hasstudiedcasd</th>
+      <th>Relativeincasd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidate_forms.each do |candidate_form| %>
+      <tr>
+        <td><%= candidate_form.automovel %></td>
+        <td><%= candidate_form.television %></td>
+        <td><%= candidate_form.computers %></td>
+        <td><%= candidate_form.washingMachines %></td>
+        <td><%= candidate_form.fridge %></td>
+        <td><%= candidate_form.radio %></td>
+        <td><%= candidate_form.bathrooms %></td>
+        <td><%= candidate_form.employees %></td>
+        <td><%= candidate_form.householderInstructionLevel %></td>
+        <td><%= candidate_form.city %></td>
+        <td><%= candidate_form.houseType %></td>
+        <td><%= candidate_form.transport %></td>
+        <td><%= candidate_form.familyIncomeParticipation %></td>
+        <td><%= candidate_form.workType %></td>
+        <td><%= candidate_form.individualMonthlyIncome %></td>
+        <td><%= candidate_form.howDoYouKnowCASD %></td>
+        <td><%= candidate_form.isHighSchoolStudent %></td>
+        <td><%= candidate_form.hasStudiedCASD %></td>
+        <td><%= candidate_form.relativeInCASD %></td>
+        <td><%= link_to 'Show', candidate_form %></td>
+        <td><%= link_to 'Edit', edit_candidate_form_path(candidate_form) %></td>
+        <td><%= link_to 'Destroy', candidate_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Novo Formulário', new_candidate_form_path %>
+<!--<% @candidate_forms.each do |candidate_form| %>
+<!--Automovel: <%= candidate_form.automovel %><br/><br/>
+<!--Quantas televisões há na sua casa? <%= candidate_form.television %><br/><br/>
+Quantos computadores há na sua casa? <%= candidate_form.computers %><br/><br/>
+Quantas máquinas de lavar há na sua casa? <%= candidate_form.washingMachines %><br/><br/> -->
+
+<% end %>
