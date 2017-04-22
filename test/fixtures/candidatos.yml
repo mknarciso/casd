@@ -1,9 +1,61 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  born: 2017-04-07
+  inscricao: 1
+  nome: MyString
+  rg: MyString
+  cpf: MyString
+  sexo: MyString
+  nascimento: 2017-04-13
+  responsavel: MyString
+  parentesco: MyString
+  celular: MyString
+  telefone: MyString
+  email: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: MyString
+  cidade: MyString
+  especiais: false
+  nec_especial: MyString
+  tipo_escola: MyString
+  escolaridade: MyString
+  nome_escola: MyString
+  trabalha: false
+  profissao: MyString
+  transporte: MyString
+  internet: false
+  ex_aluno: MyString
+  como_conheceu: MyString
+  data_inscricao: 2017-04-13
+  facebook: MyString
 
 two:
-  name: MyString
-  born: 2017-04-07
+  inscricao: 1
+  nome: MyString
+  rg: MyString
+  cpf: MyString
+  sexo: MyString
+  nascimento: 2017-04-13
+  responsavel: MyString
+  parentesco: MyString
+  celular: MyString
+  telefone: MyString
+  email: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: MyString
+  cidade: MyString
+  especiais: false
+  nec_especial: MyString
+  tipo_escola: MyString
+  escolaridade: MyString
+  nome_escola: MyString
+  trabalha: false
+  profissao: MyString
+  transporte: MyString
+  internet: false
+  ex_aluno: MyString
+  como_conheceu: MyString
+  data_inscricao: 2017-04-13
+  facebook: MyString

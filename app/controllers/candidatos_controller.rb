@@ -21,6 +21,14 @@ class CandidatosController < ApplicationController
   def edit
   end
 
+  def addfile
+  end
+
+  def import
+    Candidato.import(params[:file])
+    redirect_to candidatos_path, notice: "CSV importado com sucesso."  
+  end
+
   # POST /candidatos
   # POST /candidatos.json
   def create
@@ -69,6 +77,6 @@ class CandidatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidato_params
-      params.require(:candidato).permit(:name, :born)
+      params.require(:candidato).permit(:inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook)
     end
 end

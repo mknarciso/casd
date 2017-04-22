@@ -1,2 +1,2 @@
-json.extract! candidato, :id, :name, :born, :created_at, :updated_at
+json.extract! candidato, :id, :inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook, :created_at, :updated_at
 json.url candidato_url(candidato, format: :json)

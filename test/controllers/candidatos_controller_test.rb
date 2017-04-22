@@ -18,7 +18,7 @@ class CandidatosControllerTest < ActionController::TestCase
 
   test "should create candidato" do
     assert_difference('Candidato.count') do
-      post :create, candidato: { born: @candidato.born, name: @candidato.name }
+      post :create, candidato: { bairro: @candidato.bairro, celular: @candidato.celular, cep: @candidato.cep, cidade: @candidato.cidade, como_conheceu: @candidato.como_conheceu, cpf: @candidato.cpf, data_inscricao: @candidato.data_inscricao, email: @candidato.email, endereco: @candidato.endereco, escolaridade: @candidato.escolaridade, especiais: @candidato.especiais, ex_aluno: @candidato.ex_aluno, facebook: @candidato.facebook, inscricao: @candidato.inscricao, internet: @candidato.internet, nascimento: @candidato.nascimento, nec_especial: @candidato.nec_especial, nome: @candidato.nome, nome_escola: @candidato.nome_escola, parentesco: @candidato.parentesco, profissao: @candidato.profissao, responsavel: @candidato.responsavel, rg: @candidato.rg, sexo: @candidato.sexo, telefone: @candidato.telefone, tipo_escola: @candidato.tipo_escola, trabalha: @candidato.trabalha, transporte: @candidato.transporte }
     end
 
     assert_redirected_to candidato_path(assigns(:candidato))
@@ -35,7 +35,7 @@ class CandidatosControllerTest < ActionController::TestCase
   end
 
   test "should update candidato" do
-    patch :update, id: @candidato, candidato: { born: @candidato.born, name: @candidato.name }
+    patch :update, id: @candidato, candidato: { bairro: @candidato.bairro, celular: @candidato.celular, cep: @candidato.cep, cidade: @candidato.cidade, como_conheceu: @candidato.como_conheceu, cpf: @candidato.cpf, data_inscricao: @candidato.data_inscricao, email: @candidato.email, endereco: @candidato.endereco, escolaridade: @candidato.escolaridade, especiais: @candidato.especiais, ex_aluno: @candidato.ex_aluno, facebook: @candidato.facebook, inscricao: @candidato.inscricao, internet: @candidato.internet, nascimento: @candidato.nascimento, nec_especial: @candidato.nec_especial, nome: @candidato.nome, nome_escola: @candidato.nome_escola, parentesco: @candidato.parentesco, profissao: @candidato.profissao, responsavel: @candidato.responsavel, rg: @candidato.rg, sexo: @candidato.sexo, telefone: @candidato.telefone, tipo_escola: @candidato.tipo_escola, trabalha: @candidato.trabalha, transporte: @candidato.transporte }
     assert_redirected_to candidato_path(assigns(:candidato))
   end
 
