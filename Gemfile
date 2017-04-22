@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Necessary to run on Windows
+gem 'tzinfo-data'
+
 #Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
