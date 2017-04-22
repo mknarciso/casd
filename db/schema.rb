@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421235633) do
+ActiveRecord::Schema.define(version: 20170422001342) do
 
   create_table "candidatos", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170421235633) do
     t.boolean  "aprovado"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "candidato_id"
   end
 
 end
