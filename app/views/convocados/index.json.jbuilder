@@ -1,1 +1,0 @@
-json.array! @convocados, partial: 'convocados/convocado', as: :convocado

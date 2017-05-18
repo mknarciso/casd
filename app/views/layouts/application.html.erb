@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  <title>Casd</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<body >
+  <!-- Wrapper-->
+  <div id="wrapper"> 
 
-<%= yield %>
+    <!-- Page wraper -->
+    <div id="page-wrapper" class="gray-bg">
 
+        <!-- Page wrapper -->
+        <%= render 'layouts/topnavbar' %>
+        
+        <!-- Notices -->
+        <% if notice %>
+        <div class="alert alert-info alert-dismissable">
+          <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+          <%= notice %>
+        </div>
+        <% end %>
+        <!-- Main view  -->
+        <%= yield %>
+        </br></br>
+        <!-- Footer -->
+        <% #render 'layouts/footer' %>
+
+    </div>
+    <!-- End page wrapper-->
+    
+  </div>
+  <!-- End wrapper-->
+</body>
 </body>
 </html>
