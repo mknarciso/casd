@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170422001342) do
-ActiveRecord::Schema.define(version: 20170414001726) do
-=======
 ActiveRecord::Schema.define(version: 20170422021608) do
->>>>>>> 06e9411768c5deb91a45086b21df99e2eb053c10
 
   create_table "candidate_forms", force: :cascade do |t|
     t.integer  "automovel"
@@ -43,12 +38,6 @@ ActiveRecord::Schema.define(version: 20170422021608) do
   end
 
   create_table "candidatos", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "name"
-    t.date     "born"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
     t.integer  "inscricao"
     t.string   "nome"
     t.string   "rg"
@@ -79,7 +68,6 @@ ActiveRecord::Schema.define(version: 20170422021608) do
     t.string   "facebook"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
->>>>>>> 06e9411768c5deb91a45086b21df99e2eb053c10
   end
 
   create_table "entrevistas", force: :cascade do |t|

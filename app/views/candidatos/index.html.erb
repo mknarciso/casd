@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+  $('#candidatosTable').DataTable();
+});
+</script>
 
 <h1>Listing Candidatos</h1>
 
-<table class="table">
+<table id="candidatosTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Inscricao</th>
