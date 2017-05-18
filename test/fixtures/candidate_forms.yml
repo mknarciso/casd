@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  automovel: 1
+  television: 1
+  computers: 1
+  washingMachines: 1
+  fridge: 1
+  radio: 1
+  bathrooms: 1
+  employees: 1
+  householderInstructionLevel: MyString
+  city: MyString
+  houseType: MyString
+  transport: MyString
+  familyIncomeParticipation: MyString
+  workType: MyString
+  individualMonthlyIncome: MyString
+  howDoYouKnowCASD: MyString
+  isHighSchoolStudent: 
+  hasStudiedCASD: false
+  relativeInCASD: false
+
+two:
+  automovel: 1
+  television: 1
+  computers: 1
+  washingMachines: 1
+  fridge: 1
+  radio: 1
+  bathrooms: 1
+  employees: 1
+  householderInstructionLevel: MyString
+  city: MyString
+  houseType: MyString
+  transport: MyString
+  familyIncomeParticipation: MyString
+  workType: MyString
+  individualMonthlyIncome: MyString
+  howDoYouKnowCASD: MyString
+  isHighSchoolStudent: 
+  hasStudiedCASD: false
+  relativeInCASD: false

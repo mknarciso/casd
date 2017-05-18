@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Entrevistas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entregou documentos</th>
+      <th>Historico escolar</th>
+      <th>Numero de pessoas</th>
+      <th>Iptu</th>
+      <th>Veiculos</th>
+      <th>Holerites mes1</th>
+      <th>Holerites mes2</th>
+      <th>Holerites mes3</th>
+      <th>Aposentadorias</th>
+      <th>Auxilios</th>
+      <th>Renda bruta</th>
+      <th>Rbpc</th>
+      <th>Agua mes1</th>
+      <th>Agua mes2</th>
+      <th>Agua mes3</th>
+      <th>Luz mes1</th>
+      <th>Luz mes2</th>
+      <th>Luz mes3</th>
+      <th>Net tv mes1</th>
+      <th>Net tv mes2</th>
+      <th>Net tv mes3</th>
+      <th>Aluguel</th>
+      <th>Outros gastos</th>
+      <th>Gastos totais</th>
+      <th>Renda liq</th>
+      <th>Rlpc</th>
+      <th>Obs</th>
+      <th>Aprovado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entrevistas.each do |entrevista| %>
+      <tr>
+        <td><%= entrevista.entregou_documentos %></td>
+        <td><%= entrevista.historico_escolar %></td>
+        <td><%= entrevista.numero_de_pessoas %></td>
+        <td><%= entrevista.iptu %></td>
+        <td><%= entrevista.veiculos %></td>
+        <td><%= entrevista.holerites_mes1 %></td>
+        <td><%= entrevista.holerites_mes2 %></td>
+        <td><%= entrevista.holerites_mes3 %></td>
+        <td><%= entrevista.aposentadorias %></td>
+        <td><%= entrevista.auxilios %></td>
+        <td><%= entrevista.renda_bruta %></td>
+        <td><%= entrevista.rbpc %></td>
+        <td><%= entrevista.agua_mes1 %></td>
+        <td><%= entrevista.agua_mes2 %></td>
+        <td><%= entrevista.agua_mes3 %></td>
+        <td><%= entrevista.luz_mes1 %></td>
+        <td><%= entrevista.luz_mes2 %></td>
+        <td><%= entrevista.luz_mes3 %></td>
+        <td><%= entrevista.net_TV_mes1 %></td>
+        <td><%= entrevista.net_TV_mes2 %></td>
+        <td><%= entrevista.net_TV_mes3 %></td>
+        <td><%= entrevista.aluguel %></td>
+        <td><%= entrevista.outros_gastos %></td>
+        <td><%= entrevista.gastos_totais %></td>
+        <td><%= entrevista.renda_liq %></td>
+        <td><%= entrevista.rlpc %></td>
+        <td><%= entrevista.obs %></td>
+        <td><%= entrevista.aprovado %></td>
+        <td><%= link_to 'Show', entrevista %></td>
+        <td><%= link_to 'Edit', edit_entrevista_path(entrevista) %></td>
+        <td><%= link_to 'Destroy', entrevista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrevista', new_entrevista_path %>

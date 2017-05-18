@@ -1,0 +1,1 @@
+json.array! @entrevistas, partial: 'entrevistas/entrevista', as: :entrevista

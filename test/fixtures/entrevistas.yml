@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entregou_documentos: false
+  historico_escolar: false
+  numero_de_pessoas: 1
+  iptu: 1.5
+  veiculos: 1.5
+  holerites_mes1: 1.5
+  holerites_mes2: 1.5
+  holerites_mes3: 1.5
+  aposentadorias: 1.5
+  auxilios: 1.5
+  renda_bruta: 1.5
+  rbpc: 1.5
+  agua_mes1: 1.5
+  agua_mes2: 1.5
+  agua_mes3: 1.5
+  luz_mes1: 1.5
+  luz_mes2: 1.5
+  luz_mes3: 1.5
+  net_TV_mes1: 1.5
+  net_TV_mes2: 1.5
+  net_TV_mes3: 1.5
+  aluguel: 1.5
+  outros_gastos: 1.5
+  gastos_totais: 1.5
+  renda_liq: 1.5
+  rlpc: 1.5
+  obs: MyString
+  aprovado: false
+
+two:
+  entregou_documentos: false
+  historico_escolar: false
+  numero_de_pessoas: 1
+  iptu: 1.5
+  veiculos: 1.5
+  holerites_mes1: 1.5
+  holerites_mes2: 1.5
+  holerites_mes3: 1.5
+  aposentadorias: 1.5
+  auxilios: 1.5
+  renda_bruta: 1.5
+  rbpc: 1.5
+  agua_mes1: 1.5
+  agua_mes2: 1.5
+  agua_mes3: 1.5
+  luz_mes1: 1.5
+  luz_mes2: 1.5
+  luz_mes3: 1.5
+  net_TV_mes1: 1.5
+  net_TV_mes2: 1.5
+  net_TV_mes3: 1.5
+  aluguel: 1.5
+  outros_gastos: 1.5
+  gastos_totais: 1.5
+  renda_liq: 1.5
+  rlpc: 1.5
+  obs: MyString
+  aprovado: false

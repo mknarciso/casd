@@ -11,22 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-group">
     <%= f.label :inscricao %><br>
-    <%= f.number_field :inscricao %>
+    <input type="number" class="form-control" placeholder="Número de Inscrição">
   </div>
-  <div class="field">
+  
+  <div class="input-group">
     <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <input type="text" class="form-control" placeholder="Nome">
   </div>
-  <div class="field">
+  
+  <div class="input-group">
     <%= f.label :rg %><br>
-    <%= f.text_field :rg %>
+    <input type="number" class="form-control" placeholder="RG">
   </div>
-  <div class="field">
+  
+  <div class="input-group">
     <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
+    <input type="number" class="form-control" placeholder="CPF">
   </div>
+  
+  <div class="input-group">
+    <%= f.label :sexo %><br>
+    <input type="number" class="form-control" placeholder="Inscrição">
+  </div>
+  
+  <%= f.label :sexo %><br>
+  <label class="radio-inline">
+    <input type="radio" name="inlineRadioOptions" id="masc" value="masculino"> Masculino
+  </label>
+  <label class="radio-inline">
+    <input type="radio" name="inlineRadioOptions" id="fem" value="masculino"> Feminino
+  </label>
+  
   <div class="field">
     <%= f.label :sexo %><br>
     <%= f.text_field :sexo %>

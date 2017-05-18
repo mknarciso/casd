@@ -1,0 +1,129 @@
+<%= form_for(@entrevista) do |f| %>
+  <% if @entrevista.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrevista.errors.count, "error") %> prohibited this entrevista from being saved:</h2>
+
+      <ul>
+      <% @entrevista.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entregou_documentos %><br>
+    <%= f.check_box :entregou_documentos %>
+  </div>
+  <div class="field">
+    <%= f.label :historico_escolar %><br>
+    <%= f.check_box :historico_escolar %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_de_pessoas %><br>
+    <%= f.number_field :numero_de_pessoas %>
+  </div>
+  <div class="field">
+    <%= f.label :iptu %><br>
+    <%= f.text_field :iptu %>
+  </div>
+  <div class="field">
+    <%= f.label :veiculos %><br>
+    <%= f.text_field :veiculos %>
+  </div>
+  <div class="field">
+    <%= f.label :holerites_mes1 %><br>
+    <%= f.text_field :holerites_mes1 %>
+  </div>
+  <div class="field">
+    <%= f.label :holerites_mes2 %><br>
+    <%= f.text_field :holerites_mes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :holerites_mes3 %><br>
+    <%= f.text_field :holerites_mes3 %>
+  </div>
+  <div class="field">
+    <%= f.label :aposentadorias %><br>
+    <%= f.text_field :aposentadorias %>
+  </div>
+  <div class="field">
+    <%= f.label :auxilios %><br>
+    <%= f.text_field :auxilios %>
+  </div>
+  <div class="field">
+    <%= f.label :renda_bruta %><br>
+    <%= f.text_field :renda_bruta %>
+  </div>
+  <div class="field">
+    <%= f.label :rbpc %><br>
+    <%= f.text_field :rbpc %>
+  </div>
+  <div class="field">
+    <%= f.label :agua_mes1 %><br>
+    <%= f.text_field :agua_mes1 %>
+  </div>
+  <div class="field">
+    <%= f.label :agua_mes2 %><br>
+    <%= f.text_field :agua_mes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :agua_mes3 %><br>
+    <%= f.text_field :agua_mes3 %>
+  </div>
+  <div class="field">
+    <%= f.label :luz_mes1 %><br>
+    <%= f.text_field :luz_mes1 %>
+  </div>
+  <div class="field">
+    <%= f.label :luz_mes2 %><br>
+    <%= f.text_field :luz_mes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :luz_mes3 %><br>
+    <%= f.text_field :luz_mes3 %>
+  </div>
+  <div class="field">
+    <%= f.label :net_TV_mes1 %><br>
+    <%= f.text_field :net_TV_mes1 %>
+  </div>
+  <div class="field">
+    <%= f.label :net_TV_mes2 %><br>
+    <%= f.text_field :net_TV_mes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :net_TV_mes3 %><br>
+    <%= f.text_field :net_TV_mes3 %>
+  </div>
+  <div class="field">
+    <%= f.label :aluguel %><br>
+    <%= f.text_field :aluguel %>
+  </div>
+  <div class="field">
+    <%= f.label :outros_gastos %><br>
+    <%= f.text_field :outros_gastos %>
+  </div>
+  <div class="field">
+    <%= f.label :gastos_totais %><br>
+    <%= f.text_field :gastos_totais %>
+  </div>
+  <div class="field">
+    <%= f.label :renda_liq %><br>
+    <%= f.text_field :renda_liq %>
+  </div>
+  <div class="field">
+    <%= f.label :rlpc %><br>
+    <%= f.text_field :rlpc %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_field :obs %>
+  </div>
+  <div class="field">
+    <%= f.label :aprovado %><br>
+    <%= f.check_box :aprovado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

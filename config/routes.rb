@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   #get 'convocados/import' => 'convocados#import'
   resources :convocados do
     collection { post :import }
     collection { get :addfile }
   end
+=======
+  resources :entrevistas
+  resources :entrevistas
+  resources :candidate_forms
+  resources :candidatos
+>>>>>>> beb58314dbbc0b08b57a84c807907c68ad51c17f
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
