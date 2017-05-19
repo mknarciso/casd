@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/home' => 'pages#home'
+  
+  get 'candidatos/selection' => 'candidatos#selection'
+  post 'candidatos/selection' => 'candidatos#filter'
   resources :candidatos do
     collection { post :import }
     collection { get :addfile }
