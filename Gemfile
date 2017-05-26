@@ -13,7 +13,7 @@ gem 'rails', '4.2.5'
 #Import CSV
 gem 'roo'
 
-gem 'devise'
+gem 'devise', '~> 4.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

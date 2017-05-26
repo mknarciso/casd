@@ -1,6 +1,8 @@
 <h1>CASD</h1>
 <h2>
+  <% if user_signed_in? %>
   <%= link_to 'Entrevistas', entrevistas_path %> | 
   <%= link_to 'Candidatos', candidatos_path %> | 
   <%= link_to 'Pesquisa', candidate_forms_path %>
+  <% end %>
 </h2>
