@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422021608) do
+ActiveRecord::Schema.define(version: 20170525234358) do
 
   create_table "candidate_forms", force: :cascade do |t|
     t.integer  "automovel"
@@ -102,6 +102,15 @@ ActiveRecord::Schema.define(version: 20170422021608) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "candidato_id"
+  end
+
+  create_table "match_tables", force: :cascade do |t|
+    t.integer  "candidato_id"
+    t.integer  "entrevista_id"
+    t.integer  "candidate_form_id"
+    t.integer  "key"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end
