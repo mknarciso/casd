@@ -1,0 +1,2 @@
+class NotificarUsuario < ApplicationMailer
+end

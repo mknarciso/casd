@@ -46,6 +46,7 @@ class CandidatosController < ApplicationController
       if @candidato.save
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
         format.json { render :show, status: :created, location: @candidato }
+		ApplicationMailer.welcome(@candidato.email).deliver
       else
         format.html { render :new }
         format.json { render json: @candidato.errors, status: :unprocessable_entity }
