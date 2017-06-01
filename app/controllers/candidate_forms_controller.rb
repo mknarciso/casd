@@ -16,6 +16,15 @@ class CandidateFormsController < ApplicationController
   def new
     @candidate_form = CandidateForm.new
   end
+  
+  def selection
+    @atributos = CandidateForm.column_names
+  end
+  def filter
+    @columns = params[:exibir]
+    @candidate_forms = CandidateForm.select(params[:exibir])
+    render :index2
+  end
 
   # GET /candidate_forms/1/edit
   def edit

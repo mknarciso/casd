@@ -1,0 +1,15 @@
+
+<%= form_tag("/candidate_forms/selection", method: "post") do %>
+  <h1>Selecionar campos</h1>
+  <% @atributos.each do |a| %>
+    <% if a == "id" %>
+      <%= hidden_field_tag("exibir[]", a.to_sym) %>
+    <% else %>
+      <%= check_box_tag("exibir[]", a.to_sym) %>
+      <%= label_tag(a.to_sym, a.camelcase) %>
+    <% end %>
+  <% end %>
+  <%= submit_tag("Exibir") %>
+<% end %>
+
+
