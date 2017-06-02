@@ -10,7 +10,7 @@
 });
 </script>
 
-<h1>Listando Candidatos | <%= link_to "Selecionar Colunas", candidatos_selection_path %></h1>
+<h1>Listando Candidatos | <%= link_to "Selecionar Colunas", candidatos_selection_path , role: "button", class: "btn btn-default" %></h1>
 
 <table id="candidatosTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
@@ -43,7 +43,9 @@
       <th>Como conheceu</th>
       <th>Data inscricao</th>
       <th>Facebook</th>
-      <th colspan="3"></th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
 
@@ -78,9 +80,9 @@
         <td><%= candidato.como_conheceu %></td>
         <td><%= candidato.data_inscricao %></td>
         <td><%= candidato.facebook %></td>
-        <td><%= link_to 'Show', candidato %></td>
-        <td><%= link_to 'Edit', edit_candidato_path(candidato) %></td>
-        <td><%= link_to 'Destroy', candidato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', candidato, role: "button", class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_candidato_path(candidato), role: "button", class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Destroy', candidato, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -88,5 +90,5 @@
 
 <br>
 
-<%= link_to 'New Candidato', new_candidato_path %>
-<%= link_to 'Importar Lista CSV', addfile_candidatos_path%>
+<%= link_to 'Novo Candidato', new_candidato_path , role: "button", class: "btn btn-default" %>
+<%= link_to 'Importar Lista CSV', addfile_candidatos_path , role: "button", class: "btn btn-default" %>
