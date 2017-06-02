@@ -16,6 +16,15 @@ class EntrevistasController < ApplicationController
   def new
     @entrevista = Entrevista.new
   end
+  
+  def selection
+    @atributos = Entrevista.column_names
+  end
+  def filter
+    @columns = params[:exibir]
+    @entrevistas = Entrevista.select(params[:exibir])
+    render :index2
+  end
 
   # GET /entrevistas/1/edit
   def edit
