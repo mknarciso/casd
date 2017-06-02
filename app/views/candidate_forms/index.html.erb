@@ -10,7 +10,7 @@
 });
 </script>
 
-<h1>Listando Formulários dos Candidatos | <%= link_to "Selecionar Colunas", candidate_forms_selection_path %></h1>
+<h1>Listando Formulários dos Candidatos | <%= link_to "Selecionar Colunas", candidate_forms_selection_path , role: "button", class: "btn btn-default"  %></h1>
 
 <table id="candidateFormsTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
@@ -60,9 +60,9 @@
         <td><%= candidate_form.isHighSchoolStudent %></td>
         <td><%= candidate_form.hasStudiedCASD %></td>
         <td><%= candidate_form.relativeInCASD %></td>
-        <td><%= link_to 'Show', candidate_form %></td>
-        <td><%= link_to 'Edit', edit_candidate_form_path(candidate_form) %></td>
-        <td><%= link_to 'Destroy', candidate_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', candidate_form, role: "button", class: "btn btn-primary btn-xs"  %></td>
+        <td><%= link_to 'Edit', edit_candidate_form_path(candidate_form), role: "button", class: "btn btn-info btn-xs"  %></td>
+        <td><%= link_to 'Destroy', candidate_form, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-danger btn-xs"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -71,7 +71,7 @@
 <br>
 
 
-<%= link_to 'Novo Formulário', new_candidate_form_path %>
+<%= link_to 'Novo Formulário', new_candidate_form_path  , role: "button", class: "btn btn-default" %>
 <!--<% @candidate_forms.each do |candidate_form| %>
 <!--Automovel: <%= candidate_form.automovel %><br/><br/>
 <!--Quantas televisões há na sua casa? <%= candidate_form.television %><br/><br/>
