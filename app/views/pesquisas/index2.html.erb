@@ -10,7 +10,7 @@
 });
 </script>
 
-<h1>Listando Formulários dos Candidatos | <%= link_to "Selecionar Colunas", candidate_forms_selection_path , role: "button", class: "btn btn-default"  %></h1>
+<h1>Listando Pesquisas | <%= link_to "Selecionar Colunas", pesquisas_selection_path , role: "button", class: "btn btn-default"  %></h1>
 
 <table id="candidateFormsTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
@@ -23,14 +23,14 @@
   </thead>
 
   <tbody>
-    <% @candidate_forms.each do |candidate_form| %>
+    <% @pesquisas.each do |pesquisa| %>
       <tr>
         <% @columns.each do |s| %>
-          <td><%= candidate_form[s.to_sym] %></td>
+          <td><%= pesquisa[s.to_sym] %></td>
         <% end %>
-        <td><%= link_to 'Show', candidate_form, role: "button", class: "btn btn-primary btn-xs"  %></td>
-        <td><%= link_to 'Edit', edit_candidate_forms_path(candidate_form), role: "button", class: "btn btn-info btn-xs"  %></td>
-        <td><%= link_to 'Destroy', candidate_form, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-danger btn-xs"  %></td>
+        <td><%= link_to 'Show', pesquisa, role: "button", class: "btn btn-primary btn-xs"  %></td>
+        <td><%= link_to 'Edit', edit_pesquisas_path(pesquisa), role: "button", class: "btn btn-info btn-xs"  %></td>
+        <td><%= link_to 'Destroy', pesquisa, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-danger btn-xs"  %></td>
       </tr>
     <% end %>
   </tbody>

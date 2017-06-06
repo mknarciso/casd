@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     collection { get :addfile }
   end
   
-  get 'candidate_forms/selection' => 'candidate_forms#selection'
-  post 'candidate_forms/selection' => 'candidate_forms#filter'
-  resources :candidate_forms do
+  get 'pesquisas/selection' => 'pesquisas#selection'
+  post 'pesquisas/selection' => 'pesquisas#filter'
+  resources :pesquisas do
     collection { post :import }
     collection { get :addfile }
   end

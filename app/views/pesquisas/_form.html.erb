@@ -1,10 +1,10 @@
-<%= form_for(@candidate_form) do |f| %>
-  <% if @candidate_form.errors.any? %>
+<%= form_for(@pesquisa) do |f| %>
+  <% if @pesquisa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@candidate_form.errors.count, "error") %> prohibited this candidate_form from being saved:</h2>
+      <h2><%= pluralize(@pesquisa.errors.count, "error") %> prohibited this pesquisa from being saved:</h2>
 
       <ul>
-      <% @candidate_form.errors.full_messages.each do |message| %>
+      <% @pesquisa.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

@@ -11,31 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422021608) do
-
-  create_table "candidate_forms", force: :cascade do |t|
-    t.integer  "automovel"
-    t.integer  "television"
-    t.integer  "computers"
-    t.integer  "washingMachines"
-    t.integer  "fridge"
-    t.integer  "radio"
-    t.integer  "bathrooms"
-    t.integer  "employees"
-    t.string   "householderInstructionLevel"
-    t.string   "city"
-    t.string   "houseType"
-    t.string   "transport"
-    t.string   "familyIncomeParticipation"
-    t.string   "workType"
-    t.string   "individualMonthlyIncome"
-    t.string   "howDoYouKnowCASD"
-    t.integer  "isHighSchoolStudent"
-    t.boolean  "hasStudiedCASD"
-    t.boolean  "relativeInCASD"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
+ActiveRecord::Schema.define(version: 20170606143137) do
 
   create_table "candidatos", force: :cascade do |t|
     t.integer  "inscricao"
@@ -102,6 +78,30 @@ ActiveRecord::Schema.define(version: 20170422021608) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "candidato_id"
+  end
+
+  create_table "pesquisas", force: :cascade do |t|
+    t.integer  "automovel"
+    t.integer  "television"
+    t.integer  "computers"
+    t.integer  "washingMachines"
+    t.integer  "fridge"
+    t.integer  "radio"
+    t.integer  "bathrooms"
+    t.integer  "employees"
+    t.string   "householderInstructionLevel"
+    t.string   "city"
+    t.string   "houseType"
+    t.string   "transport"
+    t.string   "familyIncomeParticipation"
+    t.string   "workType"
+    t.string   "individualMonthlyIncome"
+    t.string   "howDoYouKnowCASD"
+    t.integer  "isHighSchoolStudent"
+    t.boolean  "hasStudiedCASD"
+    t.boolean  "relativeInCASD"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
