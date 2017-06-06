@@ -46,8 +46,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  
 end
-
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
+  gem 'capybara'
+  
+  # CUCUMBER
+  
+  gem "rspec", ">=1.2.2"
+  gem "rspec-rails", ">=1.2.2"
+  gem "webrat", ">=0.4.3"
+  #gem "cucumber", ">=0.2.2"
+  
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
