@@ -1,17 +1,6 @@
 <div class="container col-md-8 col-md-offset-2">
     
   <%= form_for(@candidate_form) do |f| %>
-    <% if @candidate_form.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@candidate_form.errors.count, "error") %> prohibited this candidate_form from being saved:</h2>
-  
-        <ul>
-        <% @candidate_form.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
     
     <div class="form-group row">
         <%= f.label "Quantos automóveis sua família possui?", :class=>"col-sm-8 col-form-label" %>

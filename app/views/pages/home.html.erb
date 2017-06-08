@@ -1,6 +1,13 @@
-<h1>CASD</h1>
-<h2>
-  <%= link_to 'Entrevistas', entrevistas_path %> | 
-  <%= link_to 'Candidatos', candidatos_path %> | 
-  <%= link_to 'Pesquisa', candidate_forms_path %>
-</h2>
+<div class="container">
+  <div class="jumbotron">
+      <br>
+      <h1>Centro Educacional Santos Dumont</h1>
+      <p>Bem-vindo ao site do nosso processo seletivo!</p>
+      <br>
+      <div class="btn-group">
+        <%= link_to 'Entrevistas', entrevistas_path ,:class=>"btn btn-default" %> 
+        <%= link_to 'Candidatos', candidatos_path, :class=>"btn btn-default" %> 
+        <%= link_to 'Pesquisa', candidate_forms_path, :class=>"btn btn-default" %>
+      </div>
+  </div>
+</div>
