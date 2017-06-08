@@ -3,6 +3,7 @@ class EntrevistasController < ApplicationController
 
   # GET /entrevistas
   # GET /entrevistas.json
+  
   def index
     @entrevistas = Entrevista.all
   end

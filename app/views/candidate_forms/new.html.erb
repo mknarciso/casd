@@ -1,5 +1,12 @@
-<h1>Novo Formulário</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Voltar', candidate_forms_path %>
+<div class="container">
+    <br>
+    <h1 class="text-center">Novo formulário</h1>
+    <br><br>
+    <%= render 'form' %>
+    <div></div>
+    <div class="col-md-2 col-md-offset-5">
+         <div class="center-block">
+            <%= link_to 'Voltar', candidate_forms_path, :class=>"btn btn-sm btn-default center-block" %>
+        </div>
+    </div>
+</div>

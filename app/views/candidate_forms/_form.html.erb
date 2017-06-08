@@ -1,95 +1,155 @@
-<%= form_for(@candidate_form) do |f| %>
-  <% if @candidate_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@candidate_form.errors.count, "error") %> prohibited this candidate_form from being saved:</h2>
-
-      <ul>
-      <% @candidate_form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container col-md-8 col-md-offset-2">
+    
+  <%= form_for(@candidate_form) do |f| %>
+    <% if @candidate_form.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@candidate_form.errors.count, "error") %> prohibited this candidate_form from being saved:</h2>
+  
+        <ul>
+        <% @candidate_form.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="form-group row">
+        <%= f.label "Quantos automóveis sua família possui?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:automovel, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantas televisões há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:television, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantos computadores há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:computers, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantas máquinas de lavar há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:washingMachines, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantas geladeiras há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:fridge, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantos aparelhos de rádio há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:radio, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantos banheiros há na sua casa?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:bathrooms, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Quantos empregados tem sua família?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:employees, options_for_select(0..5), {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Qual o nível de instrução do chefe de família?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:fridge, ["Fundamental 1","Fundamental 2", "Ensino Médio","Ensino Superior"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Em que cidade você mora?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :city, :required => true, :class => 'form-control' %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label "Onde e como mora atualmente?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:houseType,  ["Em casa ou apartamento mantido pela família","Em casa ou apartamento sozinho","Em casa de amigos","Em habitação coletiva","Outra"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label  "Como se locomove para o CESD?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:transport,  ["A pé, carona ou bicicleta","Transporte coletivo","Carro próprio","Moto própria"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label   "Qual sua participação na renda familiar?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:familyIncomeParticipation,  ["Sem trabalho, gastos custeados","Trabalho com independência financeira","Trabalho sem independência financeira","Trabalho sustentando a família"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label  "Caso você desenvolva alguma atividade remunerada, qual é o vínculo?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:workType,  ["Estágio","Emprego fixo","Emprego autônomo","Não desenvolvo atividade remunerada"]  , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+   
+   <div class="form-group row">
+        <%= f.label  "Qual sua renda mensal individual?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:individualMonthlyIncome, ["Até 1 salário mínimo","De 2 a 3 salários mínimos","De 3 a 4 salários mínimos","Mais de 4 salários mínimos"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label  "Como você conheceu o Centro Educacional Santos Dummont?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:howDoYouKnowCASD,   ["Alunos ou ex-alunos","Meios de comunicação","Visita na sua escola","Outros tipos de divulgação na escola", "Outros"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <%= f.label  "Você está no ensino médio?", :class=>"col-sm-8 col-form-label" %>
+        <div class="col-sm-4">
+          <%= f.select(:isHighSchoolStudent, ["Sim, 1º ano", "Sim, 2º ano", "Sim, 3º ano","Não"] , {}, { :class => 'form-control' }) %>
+        </div>
+    </div>
+   
+     <div class="form-group row">
+        <%= f.label  "Você já estudou no Centro Educacional Santos Dummont?", :class=>"col-sm-8 col-form-label" %>
+        <div class="form-check form-check-inline col-sm-4">
+          <%= f.radio_button :hasStudiedCASD, true, :class => "form-check-input" %> Sim    
+          <%= f.radio_button :hasStudiedCASD, false, :checked => true, :class=>"form-check-input" %> Não
+        </div>
+    </div>
+    
+     <div class="form-group row">
+        <%= f.label  "Você tem parentes estudando no Centro Educacional Santos Dummont?", :class=>"col-sm-8 col-form-label" %>
+        <div class="form-check form-check-inline col-sm-4">
+          <%= f.radio_button :relativeInCASD, true, :class => "form-check-input" %> Sim    
+          <%= f.radio_button :relativeInCASD, false, :checked => true, :class=>"form-check-input" %> Não
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <%= f.submit 'Salvar', :class => 'btn btl-lg btn-primary col-md-4 col-md-offset-4' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label "Quantos automóveis sua família possui?" %><br>
-    <%= f.select :automovel, options_for_select(0..5) %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantas televisões há na sua casa?" %><br>
-    <%= f.select :television, options_for_select(0..5)%>
-  </div>
-  <div class="field">
-    <%= f.label "Quantos computadores há na sua casa?" %><br>
-    <%= f.select :computers, options_for_select(0..5)%>
-  </div>
-  <div class="field">
-    <%= f.label "Quantas máquinas de lavar há na sua casa?" %><br>
-    <%= f.select :washingMachines, options_for_select(0..5) %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantas geladeiras há na sua casa?" %><br>
-    <%= f.select:fridge, options_for_select(0..5) %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantos aparelhos de rádio há na sua casa?" %><br>
-    <%= f.select :radio, options_for_select(0..5) %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantos banheiros há na sua casa?" %><br>
-    <%= f.select :bathrooms, options_for_select(0..5)  %>
-  </div>
-  <div class="field">
-    <%= f.label "Quantos empregados tem sua família?" %><br>
-    <%= f.select :employees, options_for_select(0..5)  %>
-  </div>
-  <div class="field">
-    <%= f.label "Qual o nível de instrução do chefe de família?" %><br>
-    <%= f.select :householderInstructionLevel, ["Fundamental 1","Fundamental 2", "Ensino Médio","Ensino Superior"]  %>
-  </div>
-  <div class="field">
-    <%= f.label "Em que cidade você mora?"  %><br>
-    <%= f.text_field :city, :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label "Onde e como mora atualmente?" %><br>
-    <%= f.select :houseType, ["Em casa ou apartamento mantido pela família","Em casa ou apartamento sozinho","Em casa de amigos","Em habitação coletiva","Outra"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Como se locomove para o CESD?" %><br>
-    <%= f.select :transport, ["A pé, carona ou bicicleta","Transporte coletivo","Carro próprio","Moto própria"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Qual sua participação na renda familiar?" %><br>
-    <%= f.select :familyIncomeParticipation, ["Sem trabalho, gastos custeados","Trabalho com independência financeira","Trabalho sem independência financeira","Trabalho sustentando a família"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Caso você desenvolva alguma atividade remunerada, qual é o vínculo?" %><br>
-    <%= f.select :workType, ["Estágio","Emprego fixo","Emprego autônomo","Não desenvolvo atividade remunerada"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Qual sua renda mensal individual?" %><br>
-    <%= f.select :individualMonthlyIncome, ["Até 1 salário mínimo","De 2 a 3 salários mínimos","De 3 a 4 salários mínimos","Mais de 4 salários mínimos"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Como você conheceu o Centro Educacional Santos Dummont?" %><br>
-    <%= f.select :howDoYouKnowCASD, ["Alunos ou ex-alunos","Meios de comunicação","Visita na sua escola","Outros tipos de divulgação na escola", "Outros"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Você está no ensino médio?" %><br>
-    <%= f.select :isHighSchoolStudent, ["Sim, 1º ano", "Sim, 2º ano", "Sim, 3º ano","Não"] %>
-  </div>
-  <div class="field">
-    <%= f.label "Você já estudou no Centro Educacional Santos Dummont?" %><br>
-    <%= f.radio_button :hasStudiedCASD, true %> Sim
-    <%= f.radio_button :hasStudiedCASD, false, :checked => true %> Não
-  </div>
-  <div class="field">
-    <%= f.label "Você tem parentes estudando no Centro Educacional Santos Dummont?" %><br>
-    <%= f.radio_button :relativeInCASD, true %> Sim
-    <%= f.radio_button :relativeInCASD, false, :checked => true  %> Não
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

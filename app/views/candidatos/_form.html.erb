@@ -1,129 +1,134 @@
-<%= form_for(@candidato) do |f| %>
-  <% if @candidato.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@candidato.errors.count, "error") %> prohibited this candidato from being saved:</h2>
 
-      <ul>
-      <% @candidato.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container col-md-6 col-md-offset-3">
+  <%= form_for(@candidato) do |f| %>
+    <% if @candidato.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@candidato.errors.count, "error") %> prohibited this candidato from being saved:</h2>
+  
+        <ul>
+        <% @candidato.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="form-group row">
+      <%= f.label :inscricao%>
+      <%= f.number_field :inscricao, :class=>"form-control" %>
+    </div>
+    
+    <div class="form-group row">
+      <%= f.label :nome %><br>
+      <%= f.text_field :nome, :class=>"form-control" %>
+    </div>
+    
+    <div class="form-group row">
+      <%= f.label :rg %><br>
+      <%= f.text_field :rg, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cpf %><br>
+      <%= f.text_field :cpf, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :sexo %><br>
+      <%= f.text_field :sexo, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :nascimento %><br>
+      <%= f.date_field :nascimento, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :responsavel %><br>
+      <%= f.text_field :responsavel, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :parentesco %><br>
+      <%= f.text_field :parentesco, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :celular %><br>
+      <%= f.telephone_field :celular, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :telefone %><br>
+      <%= f.telephone_field :telefone, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :endereco %><br>
+      <%= f.text_field :endereco, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :bairro %><br>
+      <%= f.text_field :bairro, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cep %><br>
+      <%= f.text_field :cep, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cidade %><br>
+      <%= f.text_field :cidade, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :especiais %><br>
+      <%= f.check_box :especiais, :class=>"form-check" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :nec_especial %><br>
+      <%= f.text_field :nec_especial, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :tipo_escola %><br>
+      <%= f.text_field :tipo_escola, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :escolaridade %><br>
+      <%= f.text_field :escolaridade, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :nome_escola %><br>
+      <%= f.text_field :nome_escola, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :trabalha %><br>
+      <%= f.check_box :trabalha, :class=>"form-check" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :profissao %><br>
+      <%= f.text_field :profissao, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :transporte %><br>
+      <%= f.text_field :transporte, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :internet %><br>
+      <%= f.check_box :internet, :class=>"form-check" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :ex_aluno %><br>
+      <%= f.text_field :ex_aluno, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :como_conheceu %><br>
+      <%= f.text_field :como_conheceu, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :data_inscricao %><br>
+      <%= f.date_field :data_inscricao, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :facebook %><br>
+      <%= f.text_field :facebook, :class=>"form-control" %>
+    </div>
+    <div class="form-group row">
+      <%= f.submit 'Salvar', :class => 'btn btl-lg btn-primary col-md-4 col-md-offset-4' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :inscricao %><br>
-    <%= f.number_field :inscricao %>
-  </div>
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :rg %><br>
-    <%= f.text_field :rg %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
-  </div>
-  <div class="field">
-    <%= f.label :sexo %><br>
-    <%= f.text_field :sexo %>
-  </div>
-  <div class="field">
-    <%= f.label :nascimento %><br>
-    <%= f.date_select :nascimento %>
-  </div>
-  <div class="field">
-    <%= f.label :responsavel %><br>
-    <%= f.text_field :responsavel %>
-  </div>
-  <div class="field">
-    <%= f.label :parentesco %><br>
-    <%= f.text_field :parentesco %>
-  </div>
-  <div class="field">
-    <%= f.label :celular %><br>
-    <%= f.text_field :celular %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
-  </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
-  </div>
-  <div class="field">
-    <%= f.label :especiais %><br>
-    <%= f.check_box :especiais %>
-  </div>
-  <div class="field">
-    <%= f.label :nec_especial %><br>
-    <%= f.text_field :nec_especial %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo_escola %><br>
-    <%= f.text_field :tipo_escola %>
-  </div>
-  <div class="field">
-    <%= f.label :escolaridade %><br>
-    <%= f.text_field :escolaridade %>
-  </div>
-  <div class="field">
-    <%= f.label :nome_escola %><br>
-    <%= f.text_field :nome_escola %>
-  </div>
-  <div class="field">
-    <%= f.label :trabalha %><br>
-    <%= f.check_box :trabalha %>
-  </div>
-  <div class="field">
-    <%= f.label :profissao %><br>
-    <%= f.text_field :profissao %>
-  </div>
-  <div class="field">
-    <%= f.label :transporte %><br>
-    <%= f.text_field :transporte %>
-  </div>
-  <div class="field">
-    <%= f.label :internet %><br>
-    <%= f.check_box :internet %>
-  </div>
-  <div class="field">
-    <%= f.label :ex_aluno %><br>
-    <%= f.text_field :ex_aluno %>
-  </div>
-  <div class="field">
-    <%= f.label :como_conheceu %><br>
-    <%= f.text_field :como_conheceu %>
-  </div>
-  <div class="field">
-    <%= f.label :data_inscricao %><br>
-    <%= f.date_select :data_inscricao %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

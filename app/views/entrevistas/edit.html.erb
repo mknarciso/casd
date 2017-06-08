@@ -1,6 +1,12 @@
-<h1>Editing Entrevista</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @entrevista %> |
-<%= link_to 'Back', entrevistas_path %>
+<div class="container">
+    <br>
+    <h1 class="text-center">Editar entrevista</h1>
+    <br><br>
+    <%= render 'form' %>
+    <div></div>
+    <div class="col-md-2 col-md-offset-5">
+         <div class="center-block">
+            <%= link_to 'Voltar', entrevistas_path, :class=>"btn btn-sm btn-default center-block" %>
+        </div>
+    </div>
+</div>

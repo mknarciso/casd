@@ -1,8 +1,11 @@
-<h2>Importar lista de candidatos candidatos</h2>
-
-<%= form_tag import_candidatos_path, multipart: true do %>
-    <div class="form-group col-sm-8">
-      <%= file_field_tag :file, :class => 'form-control' %>
-      <%= submit_tag "Importar", :class => 'form-control col-sm-4'  %>
-  </div>
-<% end %>
+<div class="container">
+    <br>
+    <h1 class="text-center">Importar lista de candidatos</h1>
+    <br><br>
+    <%= form_tag import_candidatos_path, multipart: true do %>
+      <div class="form-group col-md-4 col-md-offset-4 ">
+        <%= file_field_tag :file, :class => 'form-control' %><br>
+        <%= submit_tag "Importar", :class => 'btn btn-primary center-block'  %>
+      </div>
+    <% end %>
+</div>

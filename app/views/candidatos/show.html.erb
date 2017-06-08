@@ -1,144 +1,76 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Inscricao:</strong>
-  <%= @candidato.inscricao %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @candidato.nome %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @candidato.rg %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @candidato.cpf %>
-</p>
-
-<p>
-  <strong>Sexo:</strong>
-  <%= @candidato.sexo %>
-</p>
-
-<p>
-  <strong>Nascimento:</strong>
-  <%= @candidato.nascimento %>
-</p>
-
-<p>
-  <strong>Responsavel:</strong>
-  <%= @candidato.responsavel %>
-</p>
-
-<p>
-  <strong>Parentesco:</strong>
-  <%= @candidato.parentesco %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @candidato.celular %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @candidato.telefone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @candidato.email %>
-</p>
-
-<p>
-  <strong>Endereco:</strong>
-  <%= @candidato.endereco %>
-</p>
-
-<p>
-  <strong>Bairro:</strong>
-  <%= @candidato.bairro %>
-</p>
-
-<p>
-  <strong>Cep:</strong>
-  <%= @candidato.cep %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @candidato.cidade %>
-</p>
-
-<p>
-  <strong>Especiais:</strong>
-  <%= @candidato.especiais %>
-</p>
-
-<p>
-  <strong>Nec especial:</strong>
-  <%= @candidato.nec_especial %>
-</p>
-
-<p>
-  <strong>Tipo escola:</strong>
-  <%= @candidato.tipo_escola %>
-</p>
-
-<p>
-  <strong>Escolaridade:</strong>
-  <%= @candidato.escolaridade %>
-</p>
-
-<p>
-  <strong>Nome escola:</strong>
-  <%= @candidato.nome_escola %>
-</p>
-
-<p>
-  <strong>Trabalha:</strong>
-  <%= @candidato.trabalha %>
-</p>
-
-<p>
-  <strong>Profissao:</strong>
-  <%= @candidato.profissao %>
-</p>
-
-<p>
-  <strong>Transporte:</strong>
-  <%= @candidato.transporte %>
-</p>
-
-<p>
-  <strong>Internet:</strong>
-  <%= @candidato.internet %>
-</p>
-
-<p>
-  <strong>Ex aluno:</strong>
-  <%= @candidato.ex_aluno %>
-</p>
-
-<p>
-  <strong>Como conheceu:</strong>
-  <%= @candidato.como_conheceu %>
-</p>
-
-<p>
-  <strong>Data inscricao:</strong>
-  <%= @candidato.data_inscricao %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @candidato.facebook %>
-</p>
-
-<%= link_to 'Edit', edit_candidato_path(@candidato) %> |
-<%= link_to 'Back', candidatos_path %>
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <p id="notice"><%= notice %></p>
+    
+    <h3>
+      <strong><%= @candidato.nome %></strong>
+    </h3>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Inscrição:</strong> <%= @candidato.inscricao %></p>
+      <p class="col-md-3 "><strong>Sexo:</strong> <%= @candidato.sexo %></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Nascimento:</strong> <%= @candidato.nascimento%></p>
+      <p class="col-md-3 "><strong>RG:</strong> <%= @candidato.rg %></p>
+      <p class="col-md-3 "><strong>CPF:</strong> <%= @candidato.cpf%></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Responsável:</strong> <%= @candidato.responsavel%></p>
+      <p class="col-md-3 "><strong>Parentesco:</strong> <%= @candidato.parentesco %></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Celular:</strong> <%= @candidato.celular%></p>
+      <p class="col-md-3 "><strong>Telefone:</strong> <%= @candidato.telefone%></p>
+      <p class="col-md-3 "><strong>Email:</strong> <%= @candidato.email%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Endereço:</strong> <%= @candidato.endereco%></p>
+      <p class="col-md-3 "><strong>Bairro:</strong> <%= @candidato.bairro%></p>
+      <p class="col-md-3 "><strong>CEP:</strong> <%= @candidato.cep%></p>
+      <p class="col-md-3 "><strong>Cidade:</strong> <%= @candidato.cidade%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Especiais:</strong> <%= @candidato.especiais%></p>
+      <p class="col-md-3 "><strong>Necessidades especiais:</strong> <%= @candidato.nec_especial%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Tipo escola:</strong> <%= @candidato.tipo_escola%></p>
+      <p class="col-md-3 "><strong>Escolaridade:</strong> <%= @candidato.escolaridade%></p>
+      <p class="col-md-3 "><strong>Nome da escola:</strong> <%= @candidato.nome_escola%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Trabalha:</strong> <%= @candidato.trabalha%></p>
+      <p class="col-md-3 "><strong>Profissao:</strong> <%= @candidato.profissao%></p>
+      <p class="col-md-3 "><strong>Transporte:</strong> <%= @candidato.transporte%></p>
+      <p class="col-md-3 "><strong>Internet:</strong> <%= @candidato.internet%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Ex-aluno?:</strong> <%= @candidato.ex_aluno%></p>
+      <p class="col-md-3 "><strong>Como conheceu:</strong> <%= @candidato.como_conheceu%></p>
+      <p class="col-md-3 "><strong>Data inscrição:</strong> <%= @candidato.data_inscricao%></p>
+      <p class="col-md-3 "><strong>Facebook:</strong> <%= @candidato.facebook%></p>
+    </div>
+    <br>
+    <div>
+      <%= link_to 'Editar', edit_candidato_path(@candidato), :class => "btn btn-default"%>
+      <%= link_to 'Voltar', candidatos_path, :class => "btn btn-default" %>
+    </div>
+   
+    
+        
+        
+    
+    
+  </div>
+  
+  
+</div>
