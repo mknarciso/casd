@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 # Necessary to run on Windows
 gem 'tzinfo-data'
 
-#simplecov
+#simplecov for test coverage
 gem 'simplecov', :require => false, :group => :test
+
+#flog for code complexity
+gem 'flog'
 
 #Bootstrap
 gem 'bootstrap-sass'
