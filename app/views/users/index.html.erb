@@ -14,12 +14,11 @@
                     <% @users.each do |user| %>
                         <tr>
                             <td><%= user.email %></td>
-                            <td><%=user_status(user) %></td>
+                            <td><%= user_status(user) %></td>
                         </tr>
                     <%end%>
                 </tbody>
             </table>
-            <% if current_user.admin? %>
                 <h3 class="extra-margin-top">Convidar usuário</h3>
                 
                 <%= simple_form_for(User.new, url: user_invitation_path,
@@ -27,7 +26,6 @@
                     <%= f.input :email, placeholder: 'Email', label: false %>
                     <%= f.button :submit, 'Convidar', class: 'btn-primary' %>
                 <% end %>
-            <% end %>
         </div>
     </div>
 </div>

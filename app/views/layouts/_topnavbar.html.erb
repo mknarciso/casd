@@ -18,15 +18,15 @@
         <li><%= link_to 'Entrevistas', entrevistas_path %></li>
         <li><%= link_to 'Candidatos', candidatos_path %></li>
         <li><%= link_to 'Pesquisas', pesquisas_path %></li>
-        <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
         <% if current_user.admin? %>
         <li><%= link_to 'Usuários', users_path %></li>
         <% end%>
+        <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+        
       </ul>
       <% else %> <%# %> 
       <ul class="nav navbar-nav"><%# %> 
         <li><%= link_to 'Entrar', new_user_session_path %></li> <%# %> 
-        <li><%#= link_to 'Cadastrar', new_user_registration_path %></li>
       </ul> <%# %> 
       <% end %> <%# %>  
       
