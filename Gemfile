@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Necessary to run on Windows
 gem 'tzinfo-data'
 
+#simplecov
+gem 'simplecov', :require => false, :group => :test
+
 #Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
