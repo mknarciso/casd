@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(version: 20170606143137) do
     t.integer  "candidato_id"
   end
 
+  create_table "match_tables", force: :cascade do |t|
+    t.integer  "candidato_id"
+    t.integer  "entrevista_id"
+    t.integer  "candidate_form_id"
+    t.integer  "key"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "pesquisas", force: :cascade do |t|
     t.integer  "automovel"
     t.integer  "television"
