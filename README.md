@@ -24,3 +24,7 @@ Bem vindo ao projeto de gerenciamento de perfil socio-econômico dos candidatos 
 
 * Testes unitários: `$ rake test`
 * Testes do Cucumber: `$ rake`
+
+## Tabelas
+
+* Todas as tabelas utilizam o plugin DataTable encontrado em "https://datatables.net"
