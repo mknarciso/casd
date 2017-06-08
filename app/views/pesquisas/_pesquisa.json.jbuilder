@@ -1,0 +1,2 @@
+json.extract! pesquisa, :id, :automovel, :television, :computers, :washingMachines, :fridge, :radio, :bathrooms, :employees, :householderInstructionLevel, :city, :houseType, :transport, :familyIncomeParticipation, :workType, :individualMonthlyIncome, :howDoYouKnowCASD, :isHighSchoolStudent, :hasStudiedCASD, :relativeInCASD, :created_at, :updated_at
+json.url pesquisa_url(pesquisa, format: :json)

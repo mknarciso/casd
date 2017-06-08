@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <p id="notice"><%= notice %></p>
+    <h3>Formulário</h3><br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Automóveis:</strong> <%= @pesquisa.automovel %></p>
+      <p class="col-md-3 "><strong>Televisões:</strong> <%= @pesquisa.television %></p>
+      <p class="col-md-3 "><strong>Computadores:</strong> <%= @pesquisa.computers %></p>
+      <p class="col-md-3 "><strong>Máquinas de lavar:</strong> <%= @pesquisa.washingMachines %></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Geladeiras:</strong> <%= @pesquisa.fridge %></p>
+      <p class="col-md-3 "><strong>Rádios:</strong> <%= @pesquisa.radio %></p>
+      <p class="col-md-3 "><strong>Banheiros:</strong> <%= @pesquisa.bathrooms %></p>
+      <p class="col-md-3 "><strong>Empregados:</strong> <%= @pesquisa.employees %></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Nível de instrução:</strong> <%= @pesquisa.householderInstructionLevel %></p>
+      <p class="col-md-3 "><strong>Cidade:</strong> <%= @pesquisa.city %></p>
+      <p class="col-md-3 "><strong>Tipo de residência:</strong> <%= @pesquisa.houseType %></p>
+      <p class="col-md-3 "><strong>Transporte:</strong> <%= @pesquisa.transport %></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Participação na renda da família:</strong> <%= @pesquisa.familyIncomeParticipation %></p>
+      <p class="col-md-3 "><strong>Tipo de trabalho:</strong> <%= @pesquisa.workType %></p>
+      <p class="col-md-3 "><strong>Renda individual:</strong> <%= @pesquisa.individualMonthlyIncome %></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Como conheceu o CASD:</strong> <%= @pesquisa.howDoYouKnowCASD %></p>
+      <p class="col-md-3 "><strong>Ensino Médio:</strong> <%= @pesquisa.isHighSchoolStudent %></p>
+      <p class="col-md-3 "><strong>Ex-aluno:</strong> <%= @pesquisa.hasStudiedCASD %></p>
+      <p class="col-md-3 "><strong>Parente no CASD:</strong> <%= @pesquisa.relativeInCASD %></p>
+    </div>
+    <br>
+    <div class = "row">
+      <%= link_to 'Editar', edit_pesquisa_path(@pesquisa), :class => "btn btn-default"%>
+      <%= link_to 'Voltar', pesquisas_path, :class => "btn btn-default" %>
+    </div>
+    
+  </div>
+</div>

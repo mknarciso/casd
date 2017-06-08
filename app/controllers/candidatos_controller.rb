@@ -17,6 +17,14 @@ class CandidatosController < ApplicationController
     @candidato = Candidato.new
   end
 
+ def selection
+    @atributos = Candidato.column_names
+  end
+  def filter
+    @columns = params[:exibir]
+    @candidatos = Candidato.select(params[:exibir])
+    render :index2
+  end
   # GET /candidatos/1/edit
   def edit
   end

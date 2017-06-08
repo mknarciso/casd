@@ -1,12 +1,28 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/home' => 'pages#home'
+  
+  get 'candidatos/selection' => 'candidatos#selection'
+  post 'candidatos/selection' => 'candidatos#filter'
   resources :candidatos do
     collection { post :import }
     collection { get :addfile }
   end
-  resources :entrevistas
-  resources :candidate_forms
+  
+  get 'entrevistas/selection' => 'entrevistas#selection'
+  post 'entrevistas/selection' => 'entrevistas#filter'
+  resources :entrevistas do
+    collection { post :import }
+    collection { get :addfile }
+  end
+  
+  get 'pesquisas/selection' => 'pesquisas#selection'
+  post 'pesquisas/selection' => 'pesquisas#filter'
+  resources :pesquisas do
+    collection { post :import }
+    collection { get :addfile }
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

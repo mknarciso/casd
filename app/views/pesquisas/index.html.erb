@@ -1,0 +1,79 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+  $('#pesquisasTable').DataTable();
+});
+</script>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+<h1>Listando Pesquisas | <%= link_to "Selecionar Colunas", pesquisas_selection_path , role: "button", class: "btn btn-default"  %></h1>
+
+  <br><br>
+      <table class="table table-striped" id="pesquisasTable">
+      <thead>
+        <tr>
+          <!--<th>Automóveis</th>
+          <th>Televisão</th>
+          <th>Computadores</th>
+          <th>Máquina de Lavar</th>
+          <th>Geladeiras</th>
+          <th>Aparelho de rádio</th>
+          <th>Banheiros</th>
+          <!--<th>Empregados</th>-->
+          <th>Nível Instrução do Chefe de Família</th>
+          <th>Cidade</th>
+          <th>Habitação</th>
+          <th>Transporte</th>
+          <th>Participação na renda familiar</th>
+          <th>Tipo de trabalho</th>
+          <th>Renda mensal</th>
+          <!--<th>Como conheceu</th>-->
+          <th>Ensino Médio</th>
+          <th>Ex-aluno</th>
+          <th>Parente no CASD</th>
+          <th> </th>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @pesquisas.each do |pesquisa| %>
+          <tr>
+            <!--<td><%= pesquisa.automovel %></td>
+            <td><%= pesquisa.television %></td>
+            <td><%= pesquisa.computers %></td>
+            <td><%= pesquisa.washingMachines %></td>
+            <td><%= pesquisa.fridge %></td>
+            <td><%= pesquisa.radio %></td>
+            <td><%= pesquisa.bathrooms %></td>
+            <td><%= pesquisa.employees %></td>-->
+            <td><%= pesquisa.householderInstructionLevel %></td>
+            <td><%= pesquisa.city %></td>
+            <td><%= pesquisa.houseType %></td>
+            <td><%= pesquisa.transport %></td>
+            <td><%= pesquisa.familyIncomeParticipation %></td>
+            <td><%= pesquisa.workType %></td>
+            <td><%= pesquisa.individualMonthlyIncome %></td>
+            <!--<td><%= pesquisa.howDoYouKnowCASD %></td>-->
+            <td><%= pesquisa.isHighSchoolStudent %></td>
+            <td><%= pesquisa.hasStudiedCASD %></td>
+            <td><%= pesquisa.relativeInCASD %></td>
+            <td><%= link_to 'Ver', pesquisa,  :class => "btn btn-default btn-sm" %></td>
+            <td><%= link_to 'Editar', edit_pesquisa_path(pesquisa),  :class => "btn btn-default btn-sm" %></td>
+            <td><%= link_to 'Excluir', pesquisa, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn btn-default btn-sm"%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<br>
+
+  <div class="col-md-2 col-md-offset-5">
+    <%= link_to 'Novo Formulário', new_pesquisa_path, :class => "btn btn-default center-block" %><br>
+  </div>
