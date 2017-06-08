@@ -1,12 +1,12 @@
 
 <%= form_tag("/pesquisas/selection", method: "post") do %>
-  <h1>Selecionar campos</h1>
+  <h1>Selecionar campos</h1><br>
   <div class="row">
     <% @atributos.each do |a| %>
       <% if a == "id" %>
         <%= hidden_field_tag("exibir[]", a.to_sym) %>
       <% else %>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="input-group">
               <span class="input-group-addon">
                 <%= check_box_tag("exibir[]", a.to_sym, autocomplete: "off") %>
@@ -17,11 +17,10 @@
       <% end %>
     <% end %>
   </div>
+  <br>
   <div class="row">
-  </div>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-10">
-      <%= submit_tag("Exibir" , role: "button", class: "btn btn-default" ) %>
+    <div class="col-md-2 col-md-offset-5">
+      <%= submit_tag("Exibir" , role: "button", class: "btn btn-default center-block" ) %>
     </div>
   </div>
 <% end %>
