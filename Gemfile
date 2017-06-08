@@ -12,7 +12,8 @@ gem 'rails', '4.2.5'
 
 #Import CSV
 gem 'roo'
-
+gem 'devise_invitable', '~> 1.7.0'
+gem 'simple_form', '~>3.5.0', github: 'plataformatec/simple_form', branch: 'master'
 gem 'devise', '~> 4.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -46,6 +47,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'letter_opener'
+  gem 'email_spec'
+  gem 'letter_opener_web'
 end
 
 group :development do

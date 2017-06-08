@@ -1,0 +1,32 @@
+<div class="col-md-8 col-md-offset-2">
+    <h2>Usuários Autorizados</h2>
+    
+    <div class= "panel panel-default">
+        <div class= "panel-body">
+            <table class= "table table-striped">
+                <thread>
+                    <tr>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <td><%= user.email %></td>
+                            <td></td>
+                        </tr>
+                    <%end%>
+                </tbody>
+            </table>
+            
+            <h3 class="extra-margin-top">Convidar usuário</h3>
+            
+            <%= simple_form_for(User.new, url: user_invitation_path,
+                                          html: {class: 'form-inline'}) do |f| %>
+                <%= f.input :email, placeholder: 'Email', label: false %>
+                <%= f.button :submit, 'Convidar', class: 'btn-primary' %>
+            <% end %>
+        </div>
+    </div>
+</div>

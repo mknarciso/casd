@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
   devise_for :users
+  resources :users, only: :index
   root 'pages#home'
   get 'pages/home' => 'pages#home'
   
@@ -11,6 +17,7 @@ Rails.application.routes.draw do
   end
   resources :entrevistas
   resources :candidate_forms
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
