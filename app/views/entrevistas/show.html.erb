@@ -1,144 +1,89 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Entregou documentos:</strong>
-  <%= @entrevista.entregou_documentos %>
-</p>
-
-<p>
-  <strong>Historico escolar:</strong>
-  <%= @entrevista.historico_escolar %>
-</p>
-
-<p>
-  <strong>Numero de pessoas:</strong>
-  <%= @entrevista.numero_de_pessoas %>
-</p>
-
-<p>
-  <strong>Iptu:</strong>
-  <%= @entrevista.iptu %>
-</p>
-
-<p>
-  <strong>Veiculos:</strong>
-  <%= @entrevista.veiculos %>
-</p>
-
-<p>
-  <strong>Holerites mes1:</strong>
-  <%= @entrevista.holerites_mes1 %>
-</p>
-
-<p>
-  <strong>Holerites mes2:</strong>
-  <%= @entrevista.holerites_mes2 %>
-</p>
-
-<p>
-  <strong>Holerites mes3:</strong>
-  <%= @entrevista.holerites_mes3 %>
-</p>
-
-<p>
-  <strong>Aposentadorias:</strong>
-  <%= @entrevista.aposentadorias %>
-</p>
-
-<p>
-  <strong>Auxilios:</strong>
-  <%= @entrevista.auxilios %>
-</p>
-
-<p>
-  <strong>Renda bruta:</strong>
-  <%= @entrevista.renda_bruta %>
-</p>
-
-<p>
-  <strong>Rbpc:</strong>
-  <%= @entrevista.rbpc %>
-</p>
-
-<p>
-  <strong>Agua mes1:</strong>
-  <%= @entrevista.agua_mes1 %>
-</p>
-
-<p>
-  <strong>Agua mes2:</strong>
-  <%= @entrevista.agua_mes2 %>
-</p>
-
-<p>
-  <strong>Agua mes3:</strong>
-  <%= @entrevista.agua_mes3 %>
-</p>
-
-<p>
-  <strong>Luz mes1:</strong>
-  <%= @entrevista.luz_mes1 %>
-</p>
-
-<p>
-  <strong>Luz mes2:</strong>
-  <%= @entrevista.luz_mes2 %>
-</p>
-
-<p>
-  <strong>Luz mes3:</strong>
-  <%= @entrevista.luz_mes3 %>
-</p>
-
-<p>
-  <strong>Net tv mes1:</strong>
-  <%= @entrevista.net_TV_mes1 %>
-</p>
-
-<p>
-  <strong>Net tv mes2:</strong>
-  <%= @entrevista.net_TV_mes2 %>
-</p>
-
-<p>
-  <strong>Net tv mes3:</strong>
-  <%= @entrevista.net_TV_mes3 %>
-</p>
-
-<p>
-  <strong>Aluguel:</strong>
-  <%= @entrevista.aluguel %>
-</p>
-
-<p>
-  <strong>Outros gastos:</strong>
-  <%= @entrevista.outros_gastos %>
-</p>
-
-<p>
-  <strong>Gastos totais:</strong>
-  <%= @entrevista.gastos_totais %>
-</p>
-
-<p>
-  <strong>Renda liq:</strong>
-  <%= @entrevista.renda_liq %>
-</p>
-
-<p>
-  <strong>Rlpc:</strong>
-  <%= @entrevista.rlpc %>
-</p>
-
-<p>
-  <strong>Obs:</strong>
-  <%= @entrevista.obs %>
-</p>
-
-<p>
-  <strong>Aprovado:</strong>
-  <%= @entrevista.aprovado %>
-</p>
-
-<%= link_to 'Edit', edit_entrevista_path(@entrevista) %> |
-<%= link_to 'Back', entrevistas_path %>
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <p id="notice"><%= notice %></p>
+    
+    <h3>
+      <!--Integração entre entrevista e candidato ainda não está feita -->
+      <strong><%#= @entrevista.candidato %></strong>
+    </h3>
+    <br>
+    <h3>Documentos</h3>
+    <div class="row">
+      <p class="col-md-3 "><strong>Entregou documentos:</strong> <%= @entrevista.entregou_documentos %></p>
+      <p class="col-md-3 "><strong>Hisórico escolar:</strong> <%= @entrevista.historico_escolar %></p>
+    </div>
+    <br><br>
+    <h3>Informações</h3>
+    <div class="row">
+      <p class="col-md-3 "><strong>Número de pessoas:</strong> <%= @entrevista.numero_de_pessoas%></p>
+      <p class="col-md-3 "><strong>IPTU:</strong> <%= @entrevista.iptu %></p>
+      <p class="col-md-3 "><strong>Número de veículos:</strong> <%= @entrevista.veiculos%></p>
+    </div>
+    <br>
+    <h3>Renda</h3>
+     <div class="row">
+      <p class="col-md-3 "><strong>Holerite 1:</strong> <%= @entrevista.holerites_mes1%></p>
+      <p class="col-md-3 "><strong>Holerite 2:</strong> <%= @entrevista.holerites_mes2%></p>
+      <p class="col-md-3 "><strong>Holerite 3:</strong> <%= @entrevista.holerites_mes3 %></p>
+      <p class="col-md-3 "><strong>Média :</strong> <%= Entrevista.media(@entrevista.holerites_mes1, @entrevista.holerites_mes2, @entrevista.holerites_mes3)%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Aposentadorias:</strong> <%= @entrevista.aposentadorias%></p>
+      <p class="col-md-3 "><strong>Auxilios:</strong> <%= @entrevista.auxilios%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Renda bruta:</strong> <%= @entrevista.renda_bruta%></p>
+      <p class="col-md-3 "><strong>Renda bruta per capita:</strong> <%= @entrevista.rbpc%></p>
+    </div>
+    <br><br>
+    <h3>Gastos</h3>
+    <div class="row">
+      <p class="col-md-3 "><strong>Água 1:</strong> <%= @entrevista.agua_mes1%></p>
+      <p class="col-md-3 "><strong>Água 2:</strong> <%= @entrevista.agua_mes2%></p>
+      <p class="col-md-3 "><strong>Água 3:</strong> <%= @entrevista.agua_mes3 %></p>
+      <p class="col-md-3 "><strong>Média :</strong> <%= Entrevista.media(@entrevista.agua_mes1, @entrevista.agua_mes2, @entrevista.agua_mes3)%></p>
+    </div>
+    <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Luz 1:</strong> <%= @entrevista.luz_mes1%></p>
+      <p class="col-md-3 "><strong>Luz 2:</strong> <%= @entrevista.luz_mes2%></p>
+      <p class="col-md-3 "><strong>Luz 3:</strong> <%= @entrevista.luz_mes3 %></p>
+      <p class="col-md-3 "><strong>Média :</strong> <%= Entrevista.media(@entrevista.luz_mes1, @entrevista.luz_mes2, @entrevista.luz_mes3)%></p>
+    </div>
+     <br>
+     <div class="row">
+      <p class="col-md-3 "><strong>Internet/TV 1:</strong> <%= @entrevista.net_TV_mes1%></p>
+      <p class="col-md-3 "><strong>Internet/TV 2:</strong> <%= @entrevista.net_TV_mes2%></p>
+      <p class="col-md-3 "><strong>Internet/TV 3:</strong> <%= @entrevista.net_TV_mes3 %></p>
+      <p class="col-md-3 "><strong>Média :</strong> <%= Entrevista.media(@entrevista.net_TV_mes1, @entrevista.net_TV_mes2, @entrevista.net_TV_mes3)%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Aluguel:</strong> <%= @entrevista.aluguel%></p>
+      <p class="col-md-3 "><strong>Outros gastos:</strong> <%= @entrevista.outros_gastos%></p>
+    </div>
+    <br>
+    <div class="row">
+      <p class="col-md-3 "><strong>Gastos totais:</strong> <%= @entrevista.gastos_totais%></p>
+      <p class="col-md-3 "><strong>Renda líquida:</strong> <%= @entrevista.renda_liq%></p>
+      <p class="col-md-3 "><strong>Renda líquida per capita:</strong> <%= @entrevista.rlpc%></p>
+    </div>
+    <br>
+    <h3>Observações</h3>
+    <div class="row">
+      <p class="col-md-9 "><strong>Obs:</strong> <%= @entrevista.obs%></p>
+    </div>
+    <br><br>
+    <h3>Status</h3>
+    <div class="row">
+      <p class="col-md-3 "><strong>Aprovado?:</strong> <%= @entrevista.aprovado%></p>
+    </div>
+    <br><br>
+    <div>
+      <%= link_to 'Editar', edit_entrevista_path(@entrevista), :class => "btn btn-default"%>
+      <%= link_to 'Voltar', entrevistas_path, :class => "btn btn-default" %>
+    </div>
+</div>
+</div>

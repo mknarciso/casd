@@ -3,6 +3,12 @@ source 'https://rubygems.org'
 # Necessary to run on Windows
 gem 'tzinfo-data'
 
+#simplecov for test coverage
+gem 'simplecov', :require => false, :group => :test
+
+#flog for code complexity
+gem 'flog'
+
 #Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
@@ -44,14 +50,31 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'email_spec'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Devise email confirm test
   gem 'letter_opener'
-  gem 'email_spec'
   gem 'letter_opener_web'
+  
 end
-
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
+  gem 'capybara'
+  
+  # CUCUMBER
+  
+  gem "rspec", ">=1.2.2"
+  gem "rspec-rails", ">=1.2.2"
+  gem "webrat", ">=0.4.3"
+  #gem "cucumber", ">=0.2.2"
+  
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

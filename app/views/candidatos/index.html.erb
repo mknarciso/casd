@@ -1,92 +1,97 @@
-<p id="notice"><%= notice %></p>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(document).ready(function() {
-  $('#candidatosTable').DataTable();
-});
-</script>
-
-<h1>Listando Candidatos | <%= link_to "Selecionar Colunas", candidatos_selection_path %></h1>
-
-<table id="candidatosTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Inscricao</th>
-      <th>Nome</th>
-      <th>Rg</th>
-      <th>Cpf</th>
-      <th>Sexo</th>
-      <th>Nascimento</th>
-      <th>Responsavel</th>
-      <th>Parentesco</th>
-      <th>Celular</th>
-      <th>Telefone</th>
-      <th>Email</th>
-      <th>Endereco</th>
-      <th>Bairro</th>
-      <th>Cep</th>
-      <th>Cidade</th>
-      <th>Especiais</th>
-      <th>Nec especial</th>
-      <th>Tipo escola</th>
-      <th>Escolaridade</th>
-      <th>Nome escola</th>
-      <th>Trabalha</th>
-      <th>Profissao</th>
-      <th>Transporte</th>
-      <th>Internet</th>
-      <th>Ex aluno</th>
-      <th>Como conheceu</th>
-      <th>Data inscricao</th>
-      <th>Facebook</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @candidatos.each do |candidato| %>
-      <tr>
-        <td><%= candidato.inscricao %></td>
-        <td><%= candidato.nome %></td>
-        <td><%= candidato.rg %></td>
-        <td><%= candidato.cpf %></td>
-        <td><%= candidato.sexo %></td>
-        <td><%= candidato.nascimento %></td>
-        <td><%= candidato.responsavel %></td>
-        <td><%= candidato.parentesco %></td>
-        <td><%= candidato.celular %></td>
-        <td><%= candidato.telefone %></td>
-        <td><%= candidato.email %></td>
-        <td><%= candidato.endereco %></td>
-        <td><%= candidato.bairro %></td>
-        <td><%= candidato.cep %></td>
-        <td><%= candidato.cidade %></td>
-        <td><%= candidato.especiais %></td>
-        <td><%= candidato.nec_especial %></td>
-        <td><%= candidato.tipo_escola %></td>
-        <td><%= candidato.escolaridade %></td>
-        <td><%= candidato.nome_escola %></td>
-        <td><%= candidato.trabalha %></td>
-        <td><%= candidato.profissao %></td>
-        <td><%= candidato.transporte %></td>
-        <td><%= candidato.internet %></td>
-        <td><%= candidato.ex_aluno %></td>
-        <td><%= candidato.como_conheceu %></td>
-        <td><%= candidato.data_inscricao %></td>
-        <td><%= candidato.facebook %></td>
-        <td><%= link_to 'Show', candidato %></td>
-        <td><%= link_to 'Edit', edit_candidato_path(candidato) %></td>
-        <td><%= link_to 'Destroy', candidato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Candidato', new_candidato_path %>
-<%= link_to 'Importar Lista CSV', addfile_candidatos_path%>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    $('#candidatosTable').DataTable();
+  });
+  </script>
+  
+  <h1>Listando Candidatos | <%= link_to "Selecionar Colunas", candidatos_selection_path , role: "button", class: "btn btn-default" %></h1>
+  <br><br>
+      <table class="table table-striped" id="candidatosTable" >
+        <thead>
+          <tr>
+            <!--<th>Inscricao</th>-->
+            <th>Nome</th>
+            <th>Rg</th>
+            <th>Cpf</th>
+            <th>Sexo</th>
+            <th>Nascimento</th>
+            <!--<th>Responsavel</th>
+            <th>Parentesco</th>
+            <th>Celular</th>
+            <th>Telefone</th>-->
+            <th>Email</th>
+            <th>Endereco</th>
+            <th>Bairro</th>
+            <!--<th>Cep</th>-->
+            <th>Cidade</th>
+            <!--<th>Especiais</th>
+            <th>Nec especial</th>
+            <th>Tipo escola</th>
+            <th>Escolaridade</th>
+            <th>Nome escola</th>
+            <th>Trabalha</th>
+            <th>Profissao</th>
+            <th>Transporte</th>
+            <th>Internet</th>
+            <th>Ex aluno</th>
+            <th>Como conheceu</th>
+            <th>Data inscricao</th>
+            <th>Facebook</th>-->
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @candidatos.each do |candidato| %>
+            <tr>
+              <!--<td><%= candidato.inscricao %></td>-->
+              <td><%= candidato.nome %></td>
+              <td><%= candidato.rg %></td>
+              <td><%= candidato.cpf %></td>
+              <td><%= candidato.sexo %></td>
+              <td><%= candidato.nascimento %></td>
+              <!--<td><%= candidato.responsavel %></td>
+              <td><%= candidato.parentesco %></td>
+              <td><%= candidato.celular %></td>
+              <td><%= candidato.telefone %></td>-->
+              <td><%= candidato.email %></td>
+              <td><%= candidato.endereco %></td>
+              <td><%= candidato.bairro %></td>
+              <!--<td><%= candidato.cep %></td>-->
+              <td><%= candidato.cidade %></td>
+              <!--<td><%= candidato.especiais %></td>
+              <td><%= candidato.nec_especial %></td>
+              <td><%= candidato.tipo_escola %></td>
+              <td><%= candidato.escolaridade %></td>
+              <td><%= candidato.nome_escola %></td>
+              <td><%= candidato.trabalha %></td>
+              <td><%= candidato.profissao %></td>
+              <td><%= candidato.transporte %></td>
+              <td><%= candidato.internet %></td>
+              <td><%= candidato.ex_aluno %></td>
+              <td><%= candidato.como_conheceu %></td>
+              <td><%= candidato.data_inscricao %></td>
+              <td><%= candidato.facebook %></td>-->
+              <td><%= link_to 'Ver', candidato, :class => "btn btn-sm btn-default" %></td>
+              <td><%= link_to 'Editar', edit_candidato_path(candidato), :class => "btn btn-sm  btn-default"  %></td>
+              <td><%= link_to 'Excluir', candidato, method: :delete, data: { confirm: 'Tem certeza?' }, :class => "btn btn-sm btn-default" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  <br>
+  
+  <div class="col-md-2 col-md-offset-5">
+    <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default center-block" %><br>
+    <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default center-block" %>
+  </div>
+</div>

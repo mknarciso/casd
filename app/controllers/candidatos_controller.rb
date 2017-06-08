@@ -41,7 +41,8 @@ class CandidatosController < ApplicationController
   # POST /candidatos.json
   def create
     @candidato = Candidato.new(candidato_params)
-
+    require 'securerandom'
+    MatchTable.new(candidato_id: @candidato.id, key: SecureRandom.urlsafe_base64(10))
     respond_to do |format|
       if @candidato.save
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }

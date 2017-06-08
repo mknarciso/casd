@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  candidato_id: 1
+  entrevista_id: 1
+  candidate_form_id: 1
+  key: 1
+
+two:
+  candidato_id: 1
+  entrevista_id: 1
+  candidate_form_id: 1
+  key: 1

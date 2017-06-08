@@ -1,0 +1,29 @@
+
+<%= form_tag("/entrevistas/selection", method: "post") do %>
+  <h1>Selecionar campos</h1>
+  <div class="row">
+    <% @atributos.each do |a| %>
+      <% if a == "id" %>
+        <%= hidden_field_tag("exibir[]", a.to_sym) %>
+      <% else %>
+        <div class="col-md-2">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <%= check_box_tag("exibir[]", a.to_sym, autocomplete: "off") %>
+              </span>
+              <span class="input-group-addon"><%= a.camelcase %></span>
+            </div><!-- /input-group -->
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10">
+      <%= submit_tag("Exibir" , role: "button", class: "btn btn-default" ) %>
+    </div>
+  </div>
+<% end %>
+
+
