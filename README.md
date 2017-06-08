@@ -1,24 +1,26 @@
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+     ,-----.  ,---.   ,---.  ,------.      ,--.   ,--.             ,--.                 ,--. 
+    '  .--./ /  O  \ '   .-' |  .-.  \      \  `.'  /,---.  ,---.,-'  '-.    ,--.  ,--./   | 
+    |  |    |  .-.  |`.  `-. |  |  \  :      \     /| .-. :(  .-''-.  .-'     \  `'  / `|  | 
+    '  '--'\|  | |  |.-'    ||  '--'  /       \   / \   --..-'  `) |  |        \    /   |  | 
+     `-----'`--' `--'`-----' `-------'         `-'   `----'`----'  `--'         `--'    `--' 
+                                                                                         
+Bem vindo ao projeto de gerenciamento de perfil socio-econômico dos candidatos ao CasdVest/Casdinho!
 
+## Quick Start
 
-Welcome to your Rails project on Cloud9 IDE!
+1. Acesse http://c9.io/ e crie uma conta gratuita
+2. Clique em "Create new workspace"
+3. Selecione "workspace name" e "description" de acordo com sua preferência
+4. Colar `git@github.com:mknarciso/casd.git` em "Clone from Git or Mercurial URL"
+5. Em "Choose a template" selecione "Ruby"
+6. Clique em "Create Workspace"
+7. Na aba "bash" (terminal), rode: `$ bundle install`
+8. A seguir: `$ rake db:migrate`
+9. Clique em "Run Project"
+10. Acesse o projeto através do link mostrado no terminal!
 
-To get started, just do the following:
+## Rodar Testes
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://casd-mknarciso.c9users.io/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+* Testes unitários: `$ rake test`
+* Testes do Cucumber: `$ rake`
