@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20170608133920) do
 
-
   create_table "candidatos", force: :cascade do |t|
     t.integer  "inscricao"
     t.string   "nome"
