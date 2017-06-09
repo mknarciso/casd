@@ -1,15 +1,23 @@
 <div class="container">
-  <div class="jumbotron">
-      <br>
-      <h1>Centro Educacional Santos Dumont</h1>
+  <div class="jumbotron text-center col-lg-10 <% if user_signed_in? %> col-lg-offset-1 <%end%>">
+      <h2>Centro Educacional Santos Dumont</h2>
       <p>Bem-vindo ao site do nosso processo seletivo!</p>
-      <br>
       <% if user_signed_in? %>
-      <div class="btn-group">
-        <%= link_to 'Entrevistas', entrevistas_path ,:class=>"btn btn-default" %> 
-        <%= link_to 'Candidatos', candidatos_path, :class=>"btn btn-default" %> 
-        <%= link_to 'Pesquisa', pesquisas_path, :class=>"btn btn-default" %>
-      </div>
-      <% end %>
+        <center>
+          <div class="btn-group">
+            <%= link_to 'Entrevistas', entrevistas_path ,:class=>"btn btn-default" %> 
+            <%= link_to 'Candidatos', candidatos_path, :class=>"btn btn-default" %> 
+            <%= link_to 'Pesquisa', pesquisas_path, :class=>"btn btn-default" %>
+          </div>
+        </center>
   </div>
+      <% else %>
+  </div>
+  <div class="col-lg-2">
+    <%= render "users/shared/newsession" %>
+    <%= render "users/shared/links" %>
+  </div>
+      <% end %>
+  
+
 </div>
