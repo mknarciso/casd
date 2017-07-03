@@ -19,7 +19,9 @@ Bem vindo ao projeto de gerenciamento de perfil socio-econômico dos candidatos 
 8. A seguir: `$ rake db:migrate`
 9. Clique em "Run Project"
 10. Acesse o projeto através do link mostrado no terminal!
-
+11. Para inserir o usuário inicial rode: `$ rake db:seed`
+    - usuario: admin@gmail.com
+    - senha:   adminpassword
 ## Rodar Testes
 
 * Testes unitários: `$ rake test`
