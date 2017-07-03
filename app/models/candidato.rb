@@ -6,8 +6,8 @@ class Candidato < ActiveRecord::Base
             #Candidato.create! row.to_hash
             hash = row.to_hash
             #conv = Candidato.new row.to_hash
-            hash["nascimento"] = Date.strptime(hash["nascimento"], '%d/%m/%y') 
-            hash["data_inscricao"] = DateTime.strptime(hash["data_inscricao"], '%d/%m/%y %H:%M') 
+            hash["nascimento"] = Date.strptime(hash["nascimento"], '%d/%m/%Y') 
+            hash["data_inscricao"] = DateTime.strptime(hash["data_inscricao"], '%d/%m/%Y %H:%M') 
             Candidato.create! hash
         end
     end

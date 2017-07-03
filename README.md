@@ -27,6 +27,17 @@ Bem vindo ao projeto de gerenciamento de perfil socio-econômico dos candidatos 
 * Testes unitários: `$ rake test`
 * Testes do Cucumber: `$ rake`
 
+## Candidatos
+
+É possível adicionar diversos candidatos de uma só vez, através de um arquivo "csv", para isso o arquivo deve cumprir alguns requisitos:
+* Os campos devem ser separados por `;`, essa modificação foi implementada para garantir que as virgulas do endereço ou outros campos não interfiram na leitura dos dados.
+* A primeira linha (header) dever ser a seguinte:
+`inscricao;nome;rg;cpf;sexo;nascimento;responsavel;parentesco;celular;telefone;email;endereco;bairro;cep;cidade;especiais;nec_especial;tipo_escola;escolaridade;nome_escola;trabalha;profissao;transporte;internet;ex_aluno;como_conheceu;data_inscricao;facebook
+`
+* O campo `nascimento` deve estar no formato `%d/%m/%Y` 
+* O campo `data_inscricao` deve estar no formato `%d/%m/%Y %H:%M`
+* Existe na raiz um arquivo `seed_test.csv` que serve de exemplo para importação.
+
 ## Tabelas
 
 * Todas as tabelas utilizam o plugin DataTable encontrado em "https://datatables.net"
