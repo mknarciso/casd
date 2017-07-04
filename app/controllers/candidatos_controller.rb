@@ -1,6 +1,5 @@
 class CandidatosController < ApplicationController
   before_action :set_candidato, only: [:show, :edit, :update, :destroy]
-
   # Incluimos a Lib que vamos criar para podermos chama-la no nosso método
   require './lib/generate_pdf'
   require 'prawn'
@@ -95,7 +94,9 @@ class CandidatosController < ApplicationController
   
   # Criamos o método export para chamar a lib que gera o PDF e depois redirecionar o usuário para baixo o PDF
   def pdfexport
-    GeneratePdf::candidato(Candidato.all.map {|c| c })
+    
+    GeneratePdf::candidato(Candidato.all.select { |cand| cand.entrevista && cand.entrevista.aprovado == true})
+    #GeneratePdf::candidato(Candidato.all.map {|c| c })
     redirect_to '/candidatos_aprovados.pdf'
   end
 

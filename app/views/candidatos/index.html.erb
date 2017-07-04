@@ -19,7 +19,7 @@
       <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default" %>
       <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default" %>
       <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default" %>
-      <%= link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
+      <% link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
     </div>
   </div>
   <br>
@@ -105,7 +105,7 @@
     <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default" %>
     <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default" %>
     <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default" %>
-    <%= link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
+    <% link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
     <%= link_to 'Enviar formulários', pesquisas_enviar_path, :class => "btn btn-default center-block" %><br>
   </div>
   <br><br><br><br><br>
