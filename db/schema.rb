@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20170704053725) do
     t.integer  "candidato_id"
     t.integer  "entrevista_id"
     t.integer  "candidate_form_id"
-    t.string   "key"
+    t.integer  "key"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(version: 20170704053725) do
     t.boolean  "relativeInCASD"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "enviado"
     t.integer  "candidato_id"
   end
 
