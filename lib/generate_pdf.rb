@@ -40,6 +40,7 @@ module GeneratePdf
             pdf.start_new_page(:top_margin => 100)
             first = false
             pdf.text "<b>Inscrição</b>                            <b>Nome</b>", :size => 12, :inline_format => true
+            x=0
           elsif x%40==0
             pdf.start_new_page(:top_margin => 100)
             pdf.text "<b>Inscrição</b>                            <b>Nome</b>", :size => 12, :inline_format => true

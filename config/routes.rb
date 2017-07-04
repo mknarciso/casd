@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   resources :users, only: :index
   root 'pages#home'
   get 'pages/home' => 'pages#home'
+  get 'pages/dashboard' => 'pages#dashboard'
   
   get 'candidatos/selection' => 'candidatos#selection'
   post 'candidatos/selection' => 'candidatos#filter'
+  get 'entrevistas/aprovar' => 'entrevistas#aprovar'
+  
+  get 'entrevistas/criteria_selection' => 'entrevistas#criteria_selection'
+  post 'entrevistas/criteria_selection' => 'entrevistas#criteria_filter'
+  
   resources :candidatos do
     collection { post :import }
     collection { get :addfile }

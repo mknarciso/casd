@@ -1,5 +1,6 @@
 class EntrevistasController < ApplicationController
   before_action :set_entrevista, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /entrevistas
   # GET /entrevistas.json
@@ -16,6 +17,43 @@ class EntrevistasController < ApplicationController
   # GET /entrevistas/new
   def new
     @entrevista = Entrevista.new
+  end
+  
+  def criteria_selection
+  end
+  
+  def aprovar
+    @entrevistas_id = params[:entrevistas_id]
+    @entrevistas = []
+    Entrevista.all.each do |entrevista|
+      entrevista.update(aprovado: false)
+    end
+    @entrevistas_id.each do |entrevista_id|
+      @entrevista = Entrevista.find(entrevista_id)
+      @entrevista.update(aprovado: true)
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to entrevistas_url, notice: 'Status dos candidatos selecionados foi mudada para aprovado.' }
+      format.json { head :no_content }
+    end
+    
+  end
+  
+  def criteria_filter
+    @columns = Entrevista.column_names
+    @iptu = params[:iptu]
+    @rlpc_max = params[:rlpc_max]
+    @rlpc_min = params[:rlpc_min]
+    @rbpc_max = params[:rbpc_max]
+    @rbpc_min = params[:rbpc_min]
+    @veiculos = params[:veiculos]
+    @entrevistas = Entrevista.where("iptu < ? AND rlpc > ? AND rlpc < ? AND rbpc > ? AND rbpc < ? AND veiculos < ?", @iptu, @rlpc_min, @rlpc_max, @rbpc_min, @rbpc_max, @veiculos)
+    @entrevistas_id = []
+    @entrevistas.all.each do |entrevista|
+      @entrevistas_id += [entrevista.id]
+    end
+    render :index3
   end
   
   def selection
