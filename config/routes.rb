@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   
   get 'candidatos/selection' => 'candidatos#selection'
   post 'candidatos/selection' => 'candidatos#filter'
+  
+  get 'entrevistas/criteria_selection' => 'entrevistas#criteria_selection'
+  post 'entrevistas/criteria_selection' => 'entrevistas#criteria_filter'
+  
   resources :candidatos do
     collection { post :import }
     collection { get :addfile }

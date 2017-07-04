@@ -18,6 +18,15 @@ class EntrevistasController < ApplicationController
     @entrevista = Entrevista.new
   end
   
+  def criteria_selection
+    @criterios = ["Rbpc", "Iptu", "Rlpc", "Veiculos" ]
+  end
+  def criteria_filter
+    @columns = params[:exibir]
+    @entrevistas = Entrevista.select(params[:exibir])
+    render :index3
+  end
+  
   def selection
     @atributos = Entrevista.column_names
   end
