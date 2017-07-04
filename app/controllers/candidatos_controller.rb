@@ -10,9 +10,8 @@ class CandidatosController < ApplicationController
   # GET /candidatos/1
   # GET /candidatos/1.json
   def show
-    @pesquisacriada = MatchTable.find_by(candidato_id: @candidato.id).candidate_form_id
-    if not @pesquisacriada.nil?
-      @pesquisa = Pesquisa.find(MatchTable.find_by(candidato_id: @candidato.id).candidate_form_id)
+    if not @candidato.pesquisa.nil?
+      @pesquisa = @candidato.pesquisa
     end
   end
 
@@ -21,9 +20,10 @@ class CandidatosController < ApplicationController
     @candidato = Candidato.new
   end
 
- def selection
+  def selection
     @atributos = Candidato.column_names
   end
+  
   def filter
     @columns = params[:exibir]
     @candidatos = Candidato.select(params[:exibir])
@@ -44,11 +44,10 @@ class CandidatosController < ApplicationController
   # POST /candidatos
   # POST /candidatos.json
   def create
-    @candidato = Candidato.new(candidato_params)
+    require 'securerandom'
+    @candidato = Candidato.new(candidato_params, key: SecureRandom.urlsafe_base64(10))
     respond_to do |format|
       if @candidato.save
-        require 'securerandom'
-        MatchTable.create({ :candidato_id => @candidato.id, :key => SecureRandom.urlsafe_base64(10) })
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
         format.json { render :show, status: :created, location: @candidato }
       else

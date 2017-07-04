@@ -29,7 +29,7 @@ class PesquisasController < ApplicationController
 
   # GET /pesquisas/1/edit
   def edit
-    @candidato = Candidato.find(@pesquisa.candidato_id)
+    @candidato = @pesquisa.candidato
   end
   
   def enviarForms
@@ -49,14 +49,12 @@ class PesquisasController < ApplicationController
   
   def matchKey
     @key = params[:key]
-    @candidato_id = MatchTable.find_by(key: @key).candidato_id
-    @pesquisa_id = MatchTable.find_by(key: @key).candidate_form_id
-    @candidato = Candidato.find(@candidato_id)
-    if @pesquisa_id.nil?
+    @candidato = Candidato.find_by(key: @key)
+    if @candidato.pesquisa.nil?
       @pesquisa = Pesquisa.new
       render :new
     else
-      @pesquisa = Pesquisa.find(@pesquisa_id)
+      @pesquisa = @candidato.pesquisa
       render :edit, id: @pesquisa.id
     end
   end
@@ -64,12 +62,11 @@ class PesquisasController < ApplicationController
   # POST /pesquisas
   # POST /pesquisas.json
   def create
-    @pesquisa = Pesquisa.new(pesquisa_params)
-    @candidato = Candidato.find(params[:pesquisa][:candidato_id])
+    @pesquisa = Pesquisa.create(pesquisa_params)
+    @candidato = Candidato.find(pesquisa_params[:candidato_id])
+    @pesquisa.candidato = @candidato
     respond_to do |format|
       if @pesquisa.save
-        @match = MatchTable.find_by(candidato_id: @candidato.id)
-        @match.update(candidate_form_id: @pesquisa.id)
         format.html { redirect_to @pesquisa, notice: 'Candidate form was successfully created.' }
         format.json { render :show, status: :created, location: @pesquisa }
       else
@@ -82,7 +79,7 @@ class PesquisasController < ApplicationController
   # PATCH/PUT /pesquisas/1
   # PATCH/PUT /pesquisas/1.json
   def update
-    @candidato = Candidato.find(MatchTable.find_by(candidate_form_id: @pesquisa.id).candidato_id)
+    @candidato = @pesquisa.candidato
     respond_to do |format|
       if @pesquisa.update(pesquisa_params)
         format.html { redirect_to @pesquisa, notice: 'Candidate form was successfully updated.' }
@@ -112,6 +109,6 @@ class PesquisasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pesquisa_params
-      params.require(:pesquisa).permit(:automovel, :television, :computers, :washingMachines, :fridge, :radio, :bathrooms, :employees, :householderInstructionLevel, :city, :houseType, :transport, :familyIncomeParticipation, :workType, :individualMonthlyIncome, :howDoYouKnowCASD, :isHighSchoolStudent, :hasStudiedCASD, :relativeInCASD)
+      params.require(:pesquisa).permit(:automovel, :television, :computers, :washingMachines, :fridge, :radio, :bathrooms, :employees, :householderInstructionLevel, :city, :houseType, :transport, :familyIncomeParticipation, :workType, :individualMonthlyIncome, :howDoYouKnowCASD, :isHighSchoolStudent, :hasStudiedCASD, :relativeInCASD, :candidato_id)
     end
 end
