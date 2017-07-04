@@ -36,7 +36,7 @@ class PesquisasController < ApplicationController
     Candidato.all.each do |candidato|
       pesquisa = Pesquisa.find(MatchTable.find_by(candidato_id: candidato.id).candidate_form_id)
       if(not pesquisa.enviado?)
-        link = "https://casd-gabrielatourinho.c9users.io/" + MatchTable.find_by(candidato_id: candidato.id).key
+        link = "https://casd-adautobraz.c9users.io/" + MatchTable.find_by(candidato_id: candidato.id).key
         ApplicationMailer.sendMail(candidato.email,link).deliver
         pesquisa.update(enviado: true)
       end
@@ -82,6 +82,7 @@ class PesquisasController < ApplicationController
   # PATCH/PUT /pesquisas/1
   # PATCH/PUT /pesquisas/1.json
   def update
+    @candidato = Candidato.find(MatchTable.find_by(candidate_form_id: @pesquisa.id).candidato_id)
     respond_to do |format|
       if @pesquisa.update(pesquisa_params)
         format.html { redirect_to @pesquisa, notice: 'Candidate form was successfully updated.' }

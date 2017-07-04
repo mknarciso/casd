@@ -1,5 +1,6 @@
 class Candidato < ActiveRecord::Base
     has_one :entrevista
+    has_one :pesquisa
     
     validates :inscricao, presence: true
     validates :nome, presence: true

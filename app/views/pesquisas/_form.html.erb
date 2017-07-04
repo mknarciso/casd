@@ -2,7 +2,6 @@
     
   <%= form_for(@pesquisa) do |f| %>
         
-    <%= f.hidden_field :candidato_id, :value => @candidato.id%>
     <div class="form-group row">
         <%= f.label "Quantos automóveis sua família possui?", :class=>"col-sm-8 col-form-label" %>
         <div class="col-sm-4">
@@ -139,6 +138,9 @@
     </div>
     <br>
     <div class="form-group row">
+      
+    <%= f.hidden_field :candidato_id, :value => @candidato.id%>
+
         <%= f.submit 'Salvar', :class => 'btn btl-lg btn-primary col-md-4 col-md-offset-4' %>
     </div>
   <% end %>

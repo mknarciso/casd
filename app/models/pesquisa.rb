@@ -1,4 +1,5 @@
 class Pesquisa < ActiveRecord::Base
+    belongs_to :candidato
     
     validates :automovel, presence: true
     validates :television, presence: true
