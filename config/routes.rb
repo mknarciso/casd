@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     collection { get :addfile }
   end
   
+  resources :candidatos
+  # /candidatos_pdfexport
+  get 'candidatos_pdfexport' => 'candidatos#pdfexport'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
