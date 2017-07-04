@@ -1,10 +1,16 @@
 class CandidatosController < ApplicationController
   before_action :set_candidato, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /candidatos
   # GET /candidatos.json
   def index
     @candidatos = Candidato.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @candidatos.to_csv }
+      #format.xls 
+    end
   end
 
   # GET /candidatos/1
@@ -17,9 +23,10 @@ class CandidatosController < ApplicationController
     @candidato = Candidato.new
   end
 
- def selection
+  def selection
     @atributos = Candidato.column_names
   end
+  
   def filter
     @columns = params[:exibir]
     @candidatos = Candidato.select(params[:exibir])
