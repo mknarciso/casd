@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   get 'candidatos/selection' => 'candidatos#selection'
   post 'candidatos/selection' => 'candidatos#filter'
+  get 'entrevistas/aprovar' => 'entrevistas#aprovar'
   
   get 'entrevistas/criteria_selection' => 'entrevistas#criteria_selection'
   post 'entrevistas/criteria_selection' => 'entrevistas#criteria_filter'
