@@ -62,15 +62,13 @@
     <br>
     <div>
       <%= link_to 'Editar', edit_candidato_path(@candidato), :class => "btn btn-default"%>
+      <%= link_to 'Criar entrevista', new_entrevista_path(:candidato_id => @candidato.id ), :class => "btn btn-default"%>
+      <% if not @pesquisacriada.nil? %>
+        <%= link_to 'Ver formulário', edit_pesquisa_path(:id => @pesquisa.id ), :class => "btn btn-default"%>
+      <% else %>
+        <%= link_to 'Criar formulário', new_pesquisa_path(:candidato_id => @candidato.id), :class => "btn btn-default"%>
+      <% end %>
       <%= link_to 'Voltar', candidatos_path, :class => "btn btn-default" %>
     </div>
-   
-    
-        
-        
-    
-    
   </div>
-  
-  
 </div>

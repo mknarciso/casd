@@ -20,6 +20,9 @@ class CandidatosController < ApplicationController
   # GET /candidatos/1
   # GET /candidatos/1.json
   def show
+    if not @candidato.pesquisa.nil?
+      @pesquisa = @candidato.pesquisa
+    end
   end
 
   # GET /candidatos/new
@@ -51,9 +54,8 @@ class CandidatosController < ApplicationController
   # POST /candidatos
   # POST /candidatos.json
   def create
-    @candidato = Candidato.new(candidato_params)
     require 'securerandom'
-    MatchTable.new(candidato_id: @candidato.id, key: SecureRandom.urlsafe_base64(10))
+    @candidato = Candidato.new(candidato_params, key: SecureRandom.urlsafe_base64(10))
     respond_to do |format|
       if @candidato.save
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
@@ -103,6 +105,6 @@ class CandidatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidato_params
-      params.require(:candidato).permit(:inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook)
+      params.require(:candidato).permit(:candidato_id, :inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook)
     end
 end

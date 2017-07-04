@@ -136,6 +136,9 @@
     </div>
     <br>
     <div class="form-group row">
+      
+    <%= f.hidden_field :candidato_id, :value => @candidato.id%>
+
         <%= f.submit 'Salvar', :class => 'btn btl-lg btn-primary col-md-4 col-md-offset-4' %>
     </div>
   <% end %>

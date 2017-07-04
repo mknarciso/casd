@@ -16,6 +16,7 @@ class EntrevistasController < ApplicationController
 
   # GET /entrevistas/new
   def new
+    @candidato = Candidato.find(params[:candidato_id])
     @entrevista = Entrevista.new
   end
   
@@ -67,13 +68,15 @@ class EntrevistasController < ApplicationController
 
   # GET /entrevistas/1/edit
   def edit
+    @candidato = @pesquisa.candidato
   end
 
   # POST /entrevistas
   # POST /entrevistas.json
   def create
     @entrevista = Entrevista.new(entrevista_params)
-
+    @candidato = Candidato.find(entrevista_params[:candidato_id])
+    @entrevista.candidato = @candidato 
     respond_to do |format|
       if @entrevista.save
         format.html { redirect_to @entrevista, notice: 'Entrevista was successfully created.' }
@@ -88,6 +91,7 @@ class EntrevistasController < ApplicationController
   # PATCH/PUT /entrevistas/1
   # PATCH/PUT /entrevistas/1.json
   def update
+    @candidato = @entrevista.candidato
     respond_to do |format|
       if @entrevista.update(entrevista_params)
         format.html { redirect_to @entrevista, notice: 'Entrevista was successfully updated.' }
@@ -117,6 +121,6 @@ class EntrevistasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entrevista_params
-      params.require(:entrevista).permit(:entregou_documentos, :historico_escolar, :numero_de_pessoas, :iptu, :veiculos, :holerites_mes1, :holerites_mes2, :holerites_mes3, :aposentadorias, :auxilios, :renda_bruta, :rbpc, :agua_mes1, :agua_mes2, :agua_mes3, :luz_mes1, :luz_mes2, :luz_mes3, :net_TV_mes1, :net_TV_mes2, :net_TV_mes3, :aluguel, :outros_gastos, :gastos_totais, :renda_liq, :rlpc, :obs, :aprovado)
+      params.require(:entrevista).permit(:candidato_id, :entregou_documentos, :historico_escolar, :numero_de_pessoas, :iptu, :veiculos, :holerites_mes1, :holerites_mes2, :holerites_mes3, :aposentadorias, :auxilios, :renda_bruta, :rbpc, :agua_mes1, :agua_mes2, :agua_mes3, :luz_mes1, :luz_mes2, :luz_mes3, :net_TV_mes1, :net_TV_mes2, :net_TV_mes3, :aluguel, :outros_gastos, :gastos_totais, :renda_liq, :rlpc, :obs, :aprovado)
     end
 end

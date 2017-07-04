@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703233328) do
+ActiveRecord::Schema.define(version: 20170704053725) do
 
   create_table "candidatos", force: :cascade do |t|
     t.integer  "inscricao"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170703233328) do
     t.string   "facebook"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "key"
   end
 
   create_table "entrevistas", force: :cascade do |t|
@@ -80,6 +81,8 @@ ActiveRecord::Schema.define(version: 20170703233328) do
     t.integer  "candidato_id"
   end
 
+  add_index "entrevistas", ["candidato_id"], name: "index_entrevistas_on_candidato_id"
+
   create_table "match_tables", force: :cascade do |t|
     t.integer  "candidato_id"
     t.integer  "entrevista_id"
@@ -111,9 +114,11 @@ ActiveRecord::Schema.define(version: 20170703233328) do
     t.boolean  "relativeInCASD"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "candidato_id"
     t.boolean  "enviado"
+    t.integer  "candidato_id"
   end
+
+  add_index "pesquisas", ["candidato_id"], name: "index_pesquisas_on_candidato_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",          null: false
