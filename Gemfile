@@ -29,7 +29,7 @@ gem 'devise_invitable', '~> 1.7.0'
 gem 'simple_form', '~>3.5.0', github: 'plataformatec/simple_form', branch: 'master'
 gem 'devise', '~> 4.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -60,6 +60,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'email_spec'
 
 group :development, :test do
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Devise email confirm test
@@ -89,4 +90,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

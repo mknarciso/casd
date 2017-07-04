@@ -55,11 +55,13 @@ class CandidatosController < ApplicationController
   # POST /candidatos.json
   def create
     require 'securerandom'
-    @candidato = Candidato.new(candidato_params, key: SecureRandom.urlsafe_base64(10))
+    #candidato_params += ["key" => SecureRandom.urlsafe_base64(10)]
+    @candidato = Candidato.new(candidato_params)
     respond_to do |format|
       if @candidato.save
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
         format.json { render :show, status: :created, location: @candidato }
+        #ApplicationMailer.sendMail(@candidato.email.to_s, "https://casd-adautobraz.c9users.io/".concat(@candidato.key.to_s))
       else
         format.html { render :new }
         format.json { render json: @candidato.errors, status: :unprocessable_entity }
