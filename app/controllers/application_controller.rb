@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   #  ActionMailer::Base.default_url_options[:host] ="localhost:3000"
 #  end
   def require_admin
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless (current_user && current_user.admin?)
   end
   
   def after_invite_path_for(resource)

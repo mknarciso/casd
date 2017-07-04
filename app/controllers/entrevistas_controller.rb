@@ -1,5 +1,6 @@
 class EntrevistasController < ApplicationController
   before_action :set_entrevista, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin
 
   # GET /entrevistas
   # GET /entrevistas.json
