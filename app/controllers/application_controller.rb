@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
       redirect_to(root_url) unless (current_user && current_user.admin?)
   end
   
+  def require_user
+      redirect_to(root_url) unless (current_user)
+  end
+  
   def after_invite_path_for(resource)
     users_path
   end

@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
   helper_method :resource_name, :resource, :devise_mapping
-  before_action :require_admin, only: [:dashboard]
+  before_action :require_user, only: [:dashboard]
   
   def home
+      redirect_to(pages_dashboard_path) if (current_user)
   end
   
   def dashboard

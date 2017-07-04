@@ -1,6 +1,6 @@
 class PesquisasController < ApplicationController
   before_action :set_pesquisa, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin
+  before_action :require_user
 
   # GET /pesquisas
   # GET /pesquisas.json
