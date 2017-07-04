@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: :index
   root 'pages#home'
   get 'pages/home' => 'pages#home'
+  get 'pages/dashboard' => 'pages#dashboard'
   
   get 'candidatos/selection' => 'candidatos#selection'
   post 'candidatos/selection' => 'candidatos#filter'
