@@ -1,5 +1,9 @@
 class CandidatosController < ApplicationController
   before_action :set_candidato, only: [:show, :edit, :update, :destroy]
+
+  # Incluimos a Lib que vamos criar para podermos chama-la no nosso método
+  require './lib/generate_pdf'
+  require 'prawn'
   before_action :require_user
 
   # GET /candidatos
@@ -83,6 +87,12 @@ class CandidatosController < ApplicationController
       format.html { redirect_to candidatos_url, notice: 'Candidato was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  # Criamos o método export para chamar a lib que gera o PDF e depois redirecionar o usuário para baixo o PDF
+  def pdfexport
+    GeneratePdf::candidato(Candidato.all.map {|c| c })
+    redirect_to '/candidatos_aprovados.pdf'
   end
 
   private

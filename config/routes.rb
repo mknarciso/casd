@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   
   get 'candidatos/selection' => 'candidatos#selection'
   post 'candidatos/selection' => 'candidatos#filter'
+  get 'entrevistas/aprovar' => 'entrevistas#aprovar'
+  
+  get 'entrevistas/criteria_selection' => 'entrevistas#criteria_selection'
+  post 'entrevistas/criteria_selection' => 'entrevistas#criteria_filter'
+  
   resources :candidatos do
     collection { post :import }
     collection { get :addfile }
@@ -30,6 +35,10 @@ Rails.application.routes.draw do
     collection { post :import }
     collection { get :addfile }
   end
+  
+  resources :candidatos
+  # /candidatos_pdfexport
+  get 'candidatos_pdfexport' => 'candidatos#pdfexport'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

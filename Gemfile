@@ -6,6 +6,10 @@ gem 'tzinfo-data'
 #simplecov for test coverage
 gem 'simplecov', :require => false, :group => :test
 
+#gem para geracao de pdf com candidatos aprovados
+gem 'prawn-rails'
+gem 'prawn-table'
+
 #flog for code complexity
 gem 'flog'
 

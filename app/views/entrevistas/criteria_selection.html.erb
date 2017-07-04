@@ -1,0 +1,78 @@
+
+<%= form_tag("/entrevistas/criteria_selection", method: "post") do %>
+  <h1>Preencher critérios</h1>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Renda Líquida máxima per capita</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:rlpc_max, 5000 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Renda Líquida mínima per capita</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:rlpc_min, 0 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Renda Bruta máxima per capita</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:rbpc_max, 5000 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Renda Bruta mínima per capita</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:rbpc_min, 0 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+   <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Valor máximo de IPTU</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:iptu, 5000 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+   <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon">Máximo de patrimônio dos veículos</span>
+        <span class="input-group-addon">
+          <%= number_field_tag(:veiculos, 5000 , autocomplete: "on") %>
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <%= submit_tag("Exibir" , role: "button", class: "btn btn-default center-block" ) %>
+    </div>
+  </div>
+<% end %>
+
+
+
