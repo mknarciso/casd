@@ -9,7 +9,7 @@
                 </h3>
               </div>
               <div class="panel-body">
-                <h2><%= @numero_de_candidatos %></h2> <h3>candidatos foram adicionados ao sistema!</h3>
+                <h2><%= @num_cand %></h2> <h3>candidatos foram adicionados ao sistema!</h3>
                 <hr>
                 <div class="progress">
                   <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100" style="width: 26%">
@@ -51,7 +51,20 @@
               <div class="panel-body">
                 <h3>Buscar candidato para realizar a entrevista:</h3>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Digite o nome...">
+                  
+            <script type="text/javascript">
+            $(document).ready(function() {
+              $("select#search").select2({theme: "bootstrap", width: "element" })
+              
+            });
+            </script>
+            <select id="search" class="form-control" name="candidato_id">
+              <% @candidatos.each do |candidato| %>
+                <option value="<%= candidato.id %>"><%= candidato.nome %></option>
+              <% end %>
+            </select>
+                  
+                  
                   <span class="input-group-btn">
                     <button class="btn btn-info" type="button">Buscar!</button>
                   </span>
@@ -80,13 +93,16 @@
                 <h3>Etapas do processo:</h3>
                 <hr>
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Importação dos candidatos</li>
-                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Envio das Pesquisas</li>
-                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Preenchimento das pesquisas</li>
-                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Entrevistas socioeconômicas</li>
+                  <li class="list-group-item <% if @num_cand > 0 %>  list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> <% end %> Importação dos candidatos</li>
+                  <li class="list-group-item <% if @num_pesq > 0 %>  list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> <% end %> Envio das Pesquisas</li>
+                  <li class="list-group-item <% if @num_pesq > 0 %>  list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> <% end %> Preenchimento das pesquisas</li>
+                  <li class="list-group-item <% if @num_entr > 0 %>  list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> <% end %> Entrevistas socioeconômicas</li>
                 </ul>
                 <hr>
-                <center><button type="button" class="btn btn-success btn-lg disabled">Gerar resultado do processo!</button></center>
+                <center><button type="button" class="btn btn-success btn-lg 
+                <% if !(@num_cand > 0 && @num_pesq > 0 && @num_entr > 0 ) %>
+                disabled
+                <% end %> ">Gerar resultado do processo!</button></center>
               </div>
             </div>
         </div>

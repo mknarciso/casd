@@ -7,7 +7,10 @@ class PagesController < ApplicationController
   end
   
   def dashboard
-    @numero_de_candidatos = Candidato.all.size
+    @num_cand = Candidato.all.size
+    @num_pesq = Pesquisa.all.size
+    @num_entr = Entrevista.all.size
+    @candidatos = Candidato.all
   end
 
   def resource_name

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Dashboard Search
+gem "select2-rails"
+
 # Necessary to run on Windows
 gem 'tzinfo-data'
 
