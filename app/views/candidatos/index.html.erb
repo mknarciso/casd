@@ -1,5 +1,10 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
+  <p>
+    Download: 
+    <%= link_to "CSV", candidato_path(format: "csv") %>
+    <%= link_to "EXCEL", candidato_path(format: "xls") %>
+  </p>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

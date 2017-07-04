@@ -5,6 +5,11 @@ class CandidatosController < ApplicationController
   # GET /candidatos.json
   def index
     @candidatos = Candidato.all
+    respond_to do |format|
+      format html
+      format csv { send_data @candidato.to_csv }
+      format xls 
+    end
   end
 
   # GET /candidatos/1
