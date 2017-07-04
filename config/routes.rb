@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     collection { get :addfile }
   end
   
+  get 'formulario/:key' => 'pesquisas#matchKey'
+  get 'pesquisas/enviar' => 'pesquisas#enviarForms'
+  
   get 'pesquisas/selection' => 'pesquisas#selection'
   post 'pesquisas/selection' => 'pesquisas#filter'
   resources :pesquisas do

@@ -1,7 +1,8 @@
 <div class="container col-md-8 col-md-offset-2">
     
   <%= form_for(@pesquisa) do |f| %>
-    
+        
+    <%= f.hidden_field :candidato_id, :value => @candidato.id%>
     <div class="form-group row">
         <%= f.label "Quantos automóveis sua família possui?", :class=>"col-sm-8 col-form-label" %>
         <div class="col-sm-4">

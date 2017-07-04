@@ -10,6 +10,10 @@ class CandidatosController < ApplicationController
   # GET /candidatos/1
   # GET /candidatos/1.json
   def show
+    @pesquisacriada = MatchTable.find_by(candidato_id: @candidato.id).candidate_form_id
+    if not @pesquisacriada.nil?
+      @pesquisa = Pesquisa.find(MatchTable.find_by(candidato_id: @candidato.id).candidate_form_id)
+    end
   end
 
   # GET /candidatos/new
@@ -41,10 +45,10 @@ class CandidatosController < ApplicationController
   # POST /candidatos.json
   def create
     @candidato = Candidato.new(candidato_params)
-    require 'securerandom'
-    MatchTable.new(candidato_id: @candidato.id, key: SecureRandom.urlsafe_base64(10))
     respond_to do |format|
       if @candidato.save
+        require 'securerandom'
+        MatchTable.create({ :candidato_id => @candidato.id, :key => SecureRandom.urlsafe_base64(10) })
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
         format.json { render :show, status: :created, location: @candidato }
       else
@@ -86,6 +90,6 @@ class CandidatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidato_params
-      params.require(:candidato).permit(:inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook)
+      params.require(:candidato).permit(:candidato_id, :inscricao, :nome, :rg, :cpf, :sexo, :nascimento, :responsavel, :parentesco, :celular, :telefone, :email, :endereco, :bairro, :cep, :cidade, :especiais, :nec_especial, :tipo_escola, :escolaridade, :nome_escola, :trabalha, :profissao, :transporte, :internet, :ex_aluno, :como_conheceu, :data_inscricao, :facebook)
     end
 end
