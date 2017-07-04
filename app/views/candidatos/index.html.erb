@@ -1,10 +1,6 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-  <p>
-    Download: 
-    <%= link_to "CSV", candidatos_path(format: "csv") %>
-    <% link_to "EXCEL", candidatos_path(format: "xls") %>
-  </p>
+ 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -98,5 +94,6 @@
   <div class="col-md-2 col-md-offset-5">
     <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default center-block" %><br>
     <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default center-block" %>
+    <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default center-block" %>
   </div>
 </div>
