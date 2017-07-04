@@ -22,9 +22,10 @@ class CandidatosController < ApplicationController
     @candidato = Candidato.new
   end
 
- def selection
+  def selection
     @atributos = Candidato.column_names
   end
+  
   def filter
     @columns = params[:exibir]
     @candidatos = Candidato.select(params[:exibir])
