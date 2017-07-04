@@ -14,6 +14,15 @@
   
   <h1>Listando Candidatos | <%= link_to "Selecionar Colunas", candidatos_selection_path , role: "button", class: "btn btn-default" %></h1>
   <br><br>
+  <div>
+    <div class="btn-group" role="group" aria-label="...">
+      <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default" %>
+      <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default" %>
+      <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default" %>
+      <%= link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
+    </div>
+  </div>
+  <br>
       <table class="table table-striped" id="candidatosTable" >
         <thead>
           <tr>
@@ -91,9 +100,13 @@
       </table>
   <br>
   
-  <div class="col-md-2 col-md-offset-5">
-    <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default center-block" %><br>
-    <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default center-block" %>
-    <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default center-block" %>
+  
+  <div class="btn-group" role="group" aria-label="...">
+    <%= link_to 'Novo Candidato', new_candidato_path, :class => "btn btn-default" %>
+    <%= link_to 'Importar Lista CSV', addfile_candidatos_path, :class => "btn btn-default" %>
+    <%= link_to "Exportar CSV", candidatos_path(format: "csv"),  :class => "btn btn-default" %>
+    <%= link_to 'Exportar Lista PDF', candidatos_pdfexport_path, :class => "btn btn-default" %>
+    <%= link_to 'Enviar formulários', pesquisas_enviar_path, :class => "btn btn-default center-block" %><br>
   </div>
+  <br><br><br><br><br>
 </div>
