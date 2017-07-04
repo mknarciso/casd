@@ -10,9 +10,17 @@
               </div>
               <div class="panel-body">
                 <h2><%= @numero_de_candidatos %></h2> <h3>candidatos foram adicionados ao sistema!</h3>
-                
                 <hr>
-                
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100" style="width: 26%">
+                    <span class="sr-only">26% Complete</span>
+                  </div>
+                </div>
+                <h4>10 e-mails de convite para a pesquisa já foram enviados.</h4>
+                <hr>
+                <h4>Clique no botão abaixo para enviar os e-mails restantes:</h4>
+                <hr>
+                <center><button type="button" class="btn btn-info btn-lg">Enviar e-mails!</button></center>
               </div>
             </div> 
         </div>
@@ -25,11 +33,14 @@
                 </h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <span class="sr-only">75% Complete</span>
+                  </div>
+                </div>
+                <h4>70% das pesquisas foram preenchidas</h4>
               </div>
-            </div>            
-        </div>
-        <div class="col-lg-4">
+            </div>    
             <div class="panel panel-info">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -38,9 +49,46 @@
                 </h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <h3>Buscar candidato para realizar a entrevista:</h3>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Digite o nome...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-info" type="button">Buscar!</button>
+                  </span>
+                </div><!-- /input-group -->
+                <hr>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <span class="sr-only">75% Complete</span>
+                  </div>
+                </div>
+                <h4>Faltam realizar 12 entrevistas!</h4>
+                <hr>
+                <center><button type="button" class="btn btn-info btn-lg">Visualizar entrevistas!</button></center>
               </div>
-            </div>            
+            </div>   
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    Resultado
+                </h3>
+              </div>
+              <div class="panel-body">
+                <h3>Etapas do processo:</h3>
+                <hr>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Importação dos candidatos</li>
+                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Envio das Pesquisas</li>
+                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Preenchimento das pesquisas</li>
+                  <li class="list-group-item "><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Entrevistas socioeconômicas</li>
+                </ul>
+                <hr>
+                <center><button type="button" class="btn btn-success btn-lg">Gerar resultado do processo!</button></center>
+              </div>
+            </div>
         </div>
     </div>
 
