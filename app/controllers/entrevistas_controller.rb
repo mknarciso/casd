@@ -15,6 +15,7 @@ class EntrevistasController < ApplicationController
 
   # GET /entrevistas/new
   def new
+    @candidato = Candidato.find(params[:candidato_id])
     @entrevista = Entrevista.new
   end
   
@@ -29,19 +30,20 @@ class EntrevistasController < ApplicationController
 
   # GET /entrevistas/1/edit
   def edit
+    @candidato = Candidato.find(@entrevista.candidato_id)
   end
 
   # POST /entrevistas
   # POST /entrevistas.json
   def create
     @entrevista = Entrevista.new(entrevista_params)
-
+    @candidato = Candidato.find(params[:entrevista][:candidato_id])
     respond_to do |format|
       if @entrevista.save
         format.html { redirect_to @entrevista, notice: 'Entrevista was successfully created.' }
         format.json { render :show, status: :created, location: @entrevista }
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @entrevista.errors, status: :unprocessable_entity }
       end
     end
@@ -79,6 +81,6 @@ class EntrevistasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entrevista_params
-      params.require(:entrevista).permit(:entregou_documentos, :historico_escolar, :numero_de_pessoas, :iptu, :veiculos, :holerites_mes1, :holerites_mes2, :holerites_mes3, :aposentadorias, :auxilios, :renda_bruta, :rbpc, :agua_mes1, :agua_mes2, :agua_mes3, :luz_mes1, :luz_mes2, :luz_mes3, :net_TV_mes1, :net_TV_mes2, :net_TV_mes3, :aluguel, :outros_gastos, :gastos_totais, :renda_liq, :rlpc, :obs, :aprovado)
+      params.require(:entrevista).permit(:entregou_documentos, :historico_escolar, :numero_de_pessoas, :iptu, :veiculos, :holerites_mes1, :holerites_mes2, :holerites_mes3, :aposentadorias, :auxilios, :renda_bruta, :rbpc, :agua_mes1, :agua_mes2, :agua_mes3, :luz_mes1, :luz_mes2, :luz_mes3, :net_TV_mes1, :net_TV_mes2, :net_TV_mes3, :aluguel, :outros_gastos, :gastos_totais, :renda_liq, :rlpc, :obs, :aprovado, :candidato_id)
     end
 end

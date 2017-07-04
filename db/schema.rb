@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606143137) do
+ActiveRecord::Schema.define(version: 20170703233328) do
 
   create_table "candidatos", force: :cascade do |t|
     t.integer  "inscricao"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20170606143137) do
     t.integer  "candidato_id"
     t.integer  "entrevista_id"
     t.integer  "candidate_form_id"
-    t.integer  "key"
+    t.string   "key"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20170606143137) do
     t.boolean  "relativeInCASD"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "candidato_id"
+    t.boolean  "enviado"
   end
 
 end

@@ -120,7 +120,7 @@
      <div class="form-group row">
       <%= f.label :luz_mes1, :class=>"col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= f.text_field :luz_mes2, :class=>"form-control" %>
+        <%= f.text_field :luz_mes1, :class=>"form-control" %>
       </div>
     </div>
     
@@ -208,9 +208,12 @@
       </div>
     </div>
     
+    <%= f.hidden_field :candidato_id, :value => @candidato.id %>
+    
     <div class="form-group row">
       <%= f.submit 'Salvar', :class => 'btn btl-lg btn-primary col-md-4 col-md-offset-4' %>
     </div>
+    
 
   <% end %>
 </div>

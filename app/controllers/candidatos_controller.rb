@@ -10,6 +10,7 @@ class CandidatosController < ApplicationController
   # GET /candidatos/1
   # GET /candidatos/1.json
   def show
+    @pesquisa = Pesquisa.find(MatchTable.find_by(candidato_id: @candidato.id).candidate_form_id)
   end
 
   # GET /candidatos/new
@@ -41,10 +42,10 @@ class CandidatosController < ApplicationController
   # POST /candidatos.json
   def create
     @candidato = Candidato.new(candidato_params)
-    require 'securerandom'
-    MatchTable.new(candidato_id: @candidato.id, key: SecureRandom.urlsafe_base64(10))
     respond_to do |format|
       if @candidato.save
+        require 'securerandom'
+        MatchTable.create({ :candidato_id => @candidato.id, :key => SecureRandom.urlsafe_base64(10) })
         format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
         format.json { render :show, status: :created, location: @candidato }
       else

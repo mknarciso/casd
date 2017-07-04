@@ -1,6 +1,7 @@
 class Entrevista < ActiveRecord::Base
     belongs_to :candidato
     
+    validates :candidato_id, presence: true
     validates :entregou_documentos, presence: true
     validates :historico_escolar, presence: true
     validates :numero_de_pessoas, presence: true
@@ -30,7 +31,11 @@ class Entrevista < ActiveRecord::Base
            result += arg3
            numArgsNaoNulos += 1
        end
-       return result/numArgsNaoNulos
+       if(numArgsNaoNulos == 0)
+           return 0
+       else
+           return result/numArgsNaoNulos
+       end
     end
 end
 
