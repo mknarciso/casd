@@ -5,7 +5,7 @@ class Candidato < ActiveRecord::Base
         CSV.generate(options) do |csv|
             csv << column_names #aqui que configura as informações que entram
             all.each do |candidato|
-                csv << candidato.atributos.values_at(*column_names)
+                csv << candidato.attributes.values_at(*column_names)
             end    
         end
     end
